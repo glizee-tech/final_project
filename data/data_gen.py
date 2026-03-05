@@ -1,11 +1,15 @@
 import numpy as np
 import pandas as pd
+from faker import Faker
 
 # =========================
 # CONFIG
 # =========================
 SEED = 42
 np.random.seed(SEED)
+
+fake = Faker("fr_FR")
+fake.seed_instance(SEED)
 
 N_SUPPLIERS = 80
 N_ORDERS = 25000
@@ -22,7 +26,6 @@ DUPLICATE_RATE = 0.008
 OUTLIER_RATE = 0.003
 
 # Saisonnalité (poids par mois)
-# -> plus élevé l'été et en fin d'année (exemple retail)
 MONTH_WEIGHTS = {
     1: 0.90, 2: 0.85, 3: 0.95, 4: 0.95,
     5: 1.00, 6: 1.10, 7: 1.15, 8: 1.10,
@@ -42,13 +45,10 @@ def clip(a, lo, hi):
     return np.minimum(np.maximum(a, lo), hi)
 
 def make_date_pool(start, end):
-    dates = pd.date_range(start=start, end=end, freq="D")
-    return dates
+    return pd.date_range(start=start, end=end, freq="D")
 
 def seasonal_sample_dates(n, start, end):
-    """
-    Échantillonne des dates avec saisonnalité via poids mensuels.
-    """
+    """Échantillonne des dates avec saisonnalité via poids mensuels."""
     dates = make_date_pool(start, end)
     months = dates.month.values
     w = np.array([MONTH_WEIGHTS[m] for m in months], dtype=float)
@@ -68,9 +68,7 @@ def logistic_skew_supplier_probs(suppliers, heavy_share=0.35, heavy_frac=0.15):
     probs = np.zeros(n, dtype=float)
     idx = {s: i for i, s in enumerate(suppliers)}
 
-    # heavy suppliers share
     heavy_p = heavy_share / heavy_n
-    # rest share
     rest_share = 1.0 - heavy_share
     rest_n = n - heavy_n
     rest_p = rest_share / max(1, rest_n)
@@ -78,26 +76,45 @@ def logistic_skew_supplier_probs(suppliers, heavy_share=0.35, heavy_frac=0.15):
     for s in suppliers:
         probs[idx[s]] = heavy_p if s in heavy_suppliers else rest_p
 
-    # petite randomisation
     probs = probs * np.random.uniform(0.95, 1.05, size=n)
     probs = probs / probs.sum()
     return probs, set(heavy_suppliers)
 
+def normalize_company(name: str) -> str:
+    if len(name) < 10 or " " not in name:
+        suffix = np.random.choice(["Distribution", "Logistics", "Trading", "Supply", "Services"])
+        return f"{name} {suffix}"
+    return name
+
+def make_unique_company_names(n, fake_obj):
+    names = set()
+    while len(names) < n:
+        names.add(normalize_company(fake_obj.company()))
+    return list(names)
 # =========================
 # 1) SUPPLIERS + RISK PROFILE
 # =========================
-suppliers = [f"SUP_{i:03d}" for i in range(1, N_SUPPLIERS + 1)]
+# Bronze-friendly: une seule colonne 'fournisseur' avec des noms réalistes
+suppliers = make_unique_company_names(N_SUPPLIERS, fake)
 
 # Profil risque (0 bon, 1 moyen, 2 risqué)
 risk_profile = np.random.choice([0, 1, 2], size=N_SUPPLIERS, p=[0.60, 0.25, 0.15])
 supplier_risk = dict(zip(suppliers, risk_profile))
 
 # Volatilité prix et propension au retard
-supplier_price_vol = {s: (0.03 if supplier_risk[s] == 0 else 0.08 if supplier_risk[s] == 1 else 0.18) for s in suppliers}
-supplier_delay_lambda = {s: (0.4 if supplier_risk[s] == 0 else 1.2 if supplier_risk[s] == 1 else 2.8) for s in suppliers}
+supplier_price_vol = {
+    s: (0.03 if supplier_risk[s] == 0 else 0.08 if supplier_risk[s] == 1 else 0.18)
+    for s in suppliers
+}
+supplier_delay_lambda = {
+    s: (0.4 if supplier_risk[s] == 0 else 1.2 if supplier_risk[s] == 1 else 2.8)
+    for s in suppliers
+}
 
 # DÉPENDANCE FOURNISSEUR: distribution skewed
-supplier_probs, heavy_suppliers = logistic_skew_supplier_probs(suppliers, heavy_share=0.35, heavy_frac=0.15)
+supplier_probs, heavy_suppliers = logistic_skew_supplier_probs(
+    suppliers, heavy_share=0.35, heavy_frac=0.15
+)
 
 # =========================
 # 2) ORDERS DATA (ERP)
@@ -115,7 +132,7 @@ base_delai_prevu = {
     "logistique": (3, 15),
 }
 df_orders["delai_prevu"] = [
-    np.random.randint(*base_delai_prevu[cat], 1)[0] if False else np.random.randint(base_delai_prevu[cat][0], base_delai_prevu[cat][1] + 1)
+    np.random.randint(base_delai_prevu[cat][0], base_delai_prevu[cat][1] + 1)
     for cat in df_orders["categorie_produit"]
 ]
 
@@ -177,7 +194,6 @@ df_orders["prix"] = np.round(prices, 2)
 
 # Quantité: lognormal + catégorie influence
 q = np.random.lognormal(mean=2.2, sigma=0.65, size=N_ORDERS)
-# logistique -> commandes plus grosses en moyenne
 q = q * np.where(df_orders["categorie_produit"].values == "logistique", 1.35, 1.0)
 df_orders["quantite"] = clip(q.astype(int), 1, 800)
 
@@ -204,7 +220,6 @@ df_orders["date_commande"] = pd.to_datetime(df_orders["date_commande"])
 # =========================
 # 4) INCIDENTS (corrélés aux retards)
 # =========================
-# On calcule une métrique "late_ratio" par fournisseur à partir des commandes (même avec NaN on gère)
 tmp = df_orders.dropna(subset=["delai_reel", "delai_prevu"]).copy()
 tmp["is_late"] = (tmp["delai_reel"] > tmp["delai_prevu"]).astype(int)
 late_ratio = tmp.groupby("fournisseur")["is_late"].mean().to_dict()
@@ -217,11 +232,7 @@ for s in suppliers:
     n_orders_s = orders_by_supplier.get(s, 0)
     lr = late_ratio.get(s, 0.0)
 
-    # Base incident rate
     base_rate = 0.0025 if risk == 0 else 0.009 if risk == 1 else 0.022
-
-    # Corrélation retards -> incidents (si late_ratio élevé, incidents augmentent)
-    # + un boost plus fort pour les fournisseurs à risque
     corr_boost = 1.0 + (lr * (2.2 if risk == 2 else 1.6 if risk == 1 else 1.2))
 
     lam = max(0.2, n_orders_s * base_rate * corr_boost)
@@ -230,19 +241,14 @@ for s in suppliers:
     if expected_incidents == 0:
         continue
 
-    # Dates d’incidents : proches de dates de commandes du fournisseur (réaliste)
     supplier_order_dates = df_orders.loc[df_orders["fournisseur"] == s, "date_commande"].dropna()
     if len(supplier_order_dates) > 0:
         base_dates = np.random.choice(supplier_order_dates.values, size=expected_incidents, replace=True)
-        # incident 0-10 jours après la commande
         inc_dates = pd.to_datetime(base_dates) + pd.to_timedelta(np.random.randint(0, 11, size=expected_incidents), unit="D")
     else:
-        # fallback
         inc_dates = seasonal_sample_dates(expected_incidents, START_DATE, END_DATE)
 
     for d in inc_dates:
-        # Type incident corrélé:
-        # si late_ratio haut -> plus de retard_livraison
         p_retard = clip(0.25 + 0.90 * lr, 0.30, 0.75)
         remaining = 1.0 - p_retard
         p_qualite = remaining * 0.65
@@ -250,7 +256,6 @@ for s in suppliers:
 
         t = np.random.choice(INCIDENT_TYPES, p=[p_retard, p_qualite, p_log])
 
-        # Gravité corrélée au risque
         if risk == 0:
             g = np.random.choice(SEVERITIES, p=[0.78, 0.20, 0.02])
         elif risk == 1:
@@ -262,7 +267,6 @@ for s in suppliers:
 
 df_incidents = pd.DataFrame(incident_rows)
 
-# un peu de bruit côté incidents
 if len(df_incidents) > 0:
     mask = np.random.rand(len(df_incidents)) < 0.01
     df_incidents.loc[mask, "date"] = pd.NaT
@@ -290,3 +294,8 @@ print(df_orders.head(5))
 
 print("\nAperçu incidents:")
 print(df_incidents.head(5))
+
+print("\n--- Data quality quick checks ---")
+print("Orders - null rates:\n", df_orders[["prix","quantite","delai_reel"]].isna().mean())
+print("Orders - approx duplicates:", df_orders.duplicated().mean())
+print("Incidents - null rate date:", df_incidents["date"].isna().mean())

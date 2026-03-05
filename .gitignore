@@ -1,4 +1,5 @@
 env_achat/
+mon_venv/
 __pycache__/
 *.pyc
 .env

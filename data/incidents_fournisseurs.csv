@@ -1,299 +1,245 @@
 type_incident,gravite,date,fournisseur
-probleme_logistique,moyen,2024-01-02,SUP_056
-defaut_qualite,moyen,2024-01-05,SUP_070
-retard_livraison,faible,2024-01-11,SUP_035
-retard_livraison,critique,2024-01-19,SUP_070
-probleme_logistique,faible,2024-01-20,SUP_031
-defaut_qualite,critique,2024-01-21,SUP_053
-retard_livraison,faible,2024-01-21,SUP_009
-retard_livraison,moyen,2024-01-30,SUP_034
-retard_livraison,faible,2024-01-30,SUP_065
-defaut_qualite,moyen,2024-01-31,SUP_071
-retard_livraison,critique,2024-02-04,SUP_044
-retard_livraison,moyen,2024-02-06,SUP_054
-defaut_qualite,moyen,2024-02-07,SUP_053
-retard_livraison,faible,2024-02-09,SUP_010
-probleme_logistique,critique,2024-02-14,SUP_002
-probleme_logistique,faible,2024-02-15,SUP_030
-defaut_qualite,moyen,2024-02-20,SUP_046
-defaut_qualite,moyen,2024-02-21,SUP_070
-probleme_logistique,faible,2024-02-23,SUP_063
-defaut_qualite,faible,2024-03-01,SUP_012
-probleme_logistique,faible,2024-03-04,SUP_076
-defaut_qualite,faible,2024-03-04,SUP_045
-retard_livraison,moyen,2024-03-05,SUP_010
-defaut_qualite,faible,2024-03-10,SUP_038
-retard_livraison,faible,2024-03-15,SUP_010
-retard_livraison,faible,2024-03-16,SUP_055
-retard_livraison,moyen,2024-03-16,SUP_035
-defaut_qualite,moyen,2024-03-23,SUP_051
-probleme_logistique,moyen,2024-03-27,SUP_070
-probleme_logistique,moyen,2024-03-27,SUP_021
-probleme_logistique,faible,2024-04-04,SUP_046
-retard_livraison,faible,2024-04-05,SUP_070
-retard_livraison,faible,2024-04-09,SUP_052
-defaut_qualite,critique,2024-04-10,SUP_054
-retard_livraison,moyen,2024-04-13,SUP_013
-probleme_logistique,faible,2024-04-18,SUP_054
-defaut_qualite,critique,2024-04-19,SUP_044
-defaut_qualite,faible,2024-04-21,SUP_051
-retard_livraison,critique,2024-04-23,SUP_008
-probleme_logistique,faible,2024-04-28,SUP_064
-probleme_logistique,moyen,2024-05-03,SUP_071
-probleme_logistique,faible,2024-05-05,SUP_053
-defaut_qualite,faible,2024-05-07,SUP_070
-retard_livraison,moyen,2024-05-12,SUP_044
-retard_livraison,faible,2024-05-14,SUP_008
-retard_livraison,faible,2024-05-16,SUP_064
-retard_livraison,faible,2024-05-16,SUP_017
-probleme_logistique,faible,2024-05-17,SUP_018
-defaut_qualite,faible,2024-05-20,SUP_021
-defaut_qualite,moyen,2024-05-20,SUP_051
-defaut_qualite,faible,2024-05-21,SUP_021
-retard_livraison,faible,2024-05-25,SUP_041
-retard_livraison,moyen,2024-05-26,SUP_053
-defaut_qualite,faible,2024-05-26,SUP_077
-retard_livraison,moyen,2024-05-28,SUP_051
-retard_livraison,faible,2024-05-29,SUP_054
-defaut_qualite,moyen,2024-06-03,SUP_068
-probleme_logistique,critique,2024-06-06,SUP_056
-defaut_qualite,moyen,2024-06-07,SUP_052
-retard_livraison,faible,2024-06-12,SUP_057
-probleme_logistique,moyen,2024-06-12,SUP_016
-retard_livraison,critique,2024-06-14,SUP_021
-retard_livraison,moyen,2024-06-17,SUP_035
-retard_livraison,moyen,2024-06-19,SUP_054
-retard_livraison,faible,2024-06-21,SUP_051
-defaut_qualite,moyen,2024-06-25,SUP_008
-retard_livraison,faible,2024-06-27,SUP_005
-retard_livraison,faible,2024-06-27,SUP_021
-probleme_logistique,moyen,2024-06-29,SUP_008
-defaut_qualite,faible,2024-06-29,SUP_079
-retard_livraison,critique,2024-06-29,SUP_035
-retard_livraison,faible,2024-07-01,SUP_076
-probleme_logistique,moyen,2024-07-01,SUP_035
-probleme_logistique,moyen,2024-07-02,SUP_049
-retard_livraison,faible,2024-07-08,SUP_060
-retard_livraison,critique,2024-07-09,SUP_056
-retard_livraison,critique,2024-07-10,SUP_054
-defaut_qualite,critique,2024-07-11,SUP_008
-defaut_qualite,moyen,2024-07-11,SUP_054
-defaut_qualite,moyen,2024-07-13,SUP_023
-defaut_qualite,critique,2024-07-14,SUP_051
-retard_livraison,faible,2024-07-19,SUP_054
-retard_livraison,moyen,2024-07-21,SUP_051
-defaut_qualite,moyen,2024-07-26,SUP_012
-defaut_qualite,moyen,2024-07-28,SUP_034
-retard_livraison,faible,2024-07-28,SUP_051
-probleme_logistique,critique,2024-07-28,SUP_032
-retard_livraison,faible,2024-07-28,SUP_054
-probleme_logistique,faible,2024-07-30,SUP_054
-probleme_logistique,faible,2024-08-04,SUP_025
-retard_livraison,moyen,2024-08-04,SUP_035
-retard_livraison,faible,2024-08-05,SUP_026
-defaut_qualite,faible,2024-08-07,SUP_076
-retard_livraison,moyen,2024-08-11,SUP_044
-defaut_qualite,faible,2024-08-11,SUP_068
-retard_livraison,faible,2024-08-11,SUP_008
-probleme_logistique,faible,2024-08-14,SUP_021
-probleme_logistique,moyen,2024-08-14,SUP_065
-defaut_qualite,moyen,2024-08-25,SUP_041
-retard_livraison,moyen,2024-08-26,SUP_048
-retard_livraison,faible,2024-08-26,SUP_066
-retard_livraison,moyen,2024-08-28,SUP_021
-retard_livraison,moyen,2024-08-28,SUP_003
-retard_livraison,moyen,2024-08-30,SUP_054
-retard_livraison,critique,2024-08-30,SUP_054
-retard_livraison,faible,2024-08-30,SUP_046
-retard_livraison,moyen,2024-09-02,SUP_039
-retard_livraison,critique,2024-09-05,SUP_054
-retard_livraison,moyen,2024-09-11,SUP_054
-defaut_qualite,faible,2024-09-11,SUP_031
-probleme_logistique,moyen,2024-09-11,SUP_053
-defaut_qualite,moyen,2024-09-13,SUP_070
-defaut_qualite,faible,2024-09-13,SUP_054
-defaut_qualite,faible,2024-09-15,SUP_012
-probleme_logistique,faible,2024-09-19,SUP_021
-probleme_logistique,faible,2024-09-21,SUP_002
-retard_livraison,critique,2024-09-29,SUP_035
-retard_livraison,faible,2024-10-01,SUP_031
-defaut_qualite,moyen,2024-10-05,SUP_054
-retard_livraison,moyen,2024-10-09,SUP_056
-defaut_qualite,faible,2024-10-13,SUP_071
-retard_livraison,moyen,2024-10-18,SUP_012
-retard_livraison,moyen,2024-10-19,SUP_056
-retard_livraison,faible,2024-10-24,SUP_076
-retard_livraison,moyen,2024-10-25,SUP_010
-defaut_qualite,faible,2024-10-26,SUP_049
-retard_livraison,moyen,2024-10-28,SUP_013
-retard_livraison,faible,2024-10-29,SUP_056
-retard_livraison,faible,2024-11-02,SUP_044
-probleme_logistique,faible,2024-11-03,SUP_077
-probleme_logistique,critique,2024-11-03,SUP_054
-retard_livraison,faible,2024-11-04,SUP_054
-probleme_logistique,critique,2024-11-06,SUP_070
-retard_livraison,moyen,2024-11-07,SUP_054
-defaut_qualite,faible,2024-11-09,SUP_056
-retard_livraison,faible,2024-11-13,SUP_053
-defaut_qualite,moyen,2024-11-13,SUP_012
-retard_livraison,critique,2024-11-14,SUP_034
-retard_livraison,critique,2024-11-15,SUP_008
-retard_livraison,faible,2024-11-19,SUP_054
-defaut_qualite,faible,2024-11-20,SUP_008
-retard_livraison,moyen,2024-11-22,SUP_012
-retard_livraison,faible,2024-11-23,SUP_054
-retard_livraison,faible,2024-11-24,SUP_034
-retard_livraison,moyen,2024-11-24,SUP_039
-retard_livraison,faible,2024-11-30,SUP_062
-defaut_qualite,faible,2024-12-03,SUP_046
-defaut_qualite,critique,2024-12-10,SUP_015
-retard_livraison,faible,2024-12-12,SUP_031
-retard_livraison,faible,2024-12-13,SUP_035
-defaut_qualite,faible,2024-12-14,SUP_072
-probleme_logistique,moyen,2024-12-17,SUP_054
-retard_livraison,critique,2024-12-19,SUP_054
-retard_livraison,faible,2024-12-27,SUP_051
-probleme_logistique,faible,2024-12-27,SUP_002
-retard_livraison,faible,2024-12-31,SUP_054
-defaut_qualite,moyen,2024-12-31,SUP_076
-probleme_logistique,moyen,2025-01-07,SUP_067
-retard_livraison,moyen,2025-01-07,SUP_021
-probleme_logistique,faible,2025-01-09,SUP_021
-retard_livraison,faible,2025-01-10,SUP_044
-defaut_qualite,faible,2025-01-10,SUP_053
-retard_livraison,moyen,2025-01-19,SUP_044
-defaut_qualite,moyen,2025-01-20,SUP_010
-retard_livraison,moyen,2025-01-24,SUP_044
-retard_livraison,faible,2025-01-26,SUP_016
-retard_livraison,faible,2025-01-30,SUP_036
-retard_livraison,faible,2025-02-02,SUP_056
-retard_livraison,faible,2025-02-06,SUP_012
-probleme_logistique,moyen,2025-02-06,SUP_068
-defaut_qualite,critique,2025-02-09,SUP_010
-retard_livraison,faible,2025-02-10,SUP_076
-retard_livraison,critique,2025-02-13,SUP_012
-defaut_qualite,critique,2025-02-13,SUP_034
-retard_livraison,critique,2025-02-14,SUP_034
-retard_livraison,moyen,2025-03-04,SUP_056
-probleme_logistique,moyen,2025-03-05,SUP_079
-retard_livraison,moyen,2025-03-06,SUP_008
-retard_livraison,faible,2025-03-08,SUP_010
-retard_livraison,faible,2025-03-08,SUP_054
-probleme_logistique,moyen,2025-03-09,SUP_049
-probleme_logistique,faible,2025-03-11,SUP_043
-probleme_logistique,faible,2025-03-11,SUP_029
-defaut_qualite,faible,2025-03-15,SUP_063
-defaut_qualite,moyen,2025-03-22,SUP_070
-retard_livraison,faible,2025-03-24,SUP_053
-probleme_logistique,faible,2025-03-27,SUP_035
-retard_livraison,faible,2025-03-29,SUP_008
-retard_livraison,faible,2025-03-30,SUP_068
-retard_livraison,faible,2025-03-31,SUP_054
-probleme_logistique,faible,2025-04-05,SUP_031
-retard_livraison,faible,2025-04-08,SUP_075
-retard_livraison,faible,2025-04-09,SUP_010
-retard_livraison,moyen,2025-04-18,SUP_054
-retard_livraison,moyen,2025-04-21,SUP_056
-retard_livraison,faible,2025-04-23,SUP_044
-retard_livraison,faible,2025-04-28,SUP_053
-defaut_qualite,faible,2025-05-05,SUP_064
-retard_livraison,faible,2025-05-06,SUP_076
-retard_livraison,faible,2025-05-07,SUP_077
-retard_livraison,moyen,2025-05-10,SUP_002
-retard_livraison,faible,2025-05-11,SUP_021
-retard_livraison,faible,2025-05-15,SUP_056
-defaut_qualite,faible,2025-05-16,SUP_002
-retard_livraison,moyen,2025-05-17,SUP_076
-probleme_logistique,faible,2025-06-08,SUP_008
-retard_livraison,moyen,2025-06-09,SUP_056
-retard_livraison,faible,2025-06-11,SUP_056
-defaut_qualite,moyen,2025-06-12,SUP_067
-probleme_logistique,faible,2025-06-17,SUP_068
-defaut_qualite,faible,2025-06-18,SUP_031
-defaut_qualite,faible,2025-06-21,SUP_044
-retard_livraison,moyen,2025-06-28,SUP_002
-probleme_logistique,faible,2025-06-29,SUP_054
-retard_livraison,moyen,2025-07-09,SUP_054
-defaut_qualite,faible,2025-07-09,SUP_060
-defaut_qualite,faible,2025-07-11,SUP_026
-retard_livraison,moyen,2025-07-12,SUP_076
-defaut_qualite,moyen,2025-07-13,SUP_068
-retard_livraison,moyen,2025-07-14,SUP_067
-retard_livraison,moyen,2025-07-15,SUP_008
-retard_livraison,moyen,2025-07-16,SUP_051
-retard_livraison,moyen,2025-07-16,SUP_071
-defaut_qualite,faible,2025-07-16,SUP_044
-defaut_qualite,faible,2025-07-20,SUP_043
-defaut_qualite,moyen,2025-07-24,SUP_044
-retard_livraison,moyen,2025-07-24,SUP_035
-retard_livraison,critique,2025-07-26,SUP_012
-defaut_qualite,faible,2025-07-27,SUP_040
-retard_livraison,moyen,2025-07-28,SUP_021
-retard_livraison,moyen,2025-07-28,SUP_003
-retard_livraison,moyen,2025-07-31,SUP_054
-defaut_qualite,critique,2025-07-31,SUP_054
-retard_livraison,critique,2025-08-04,SUP_054
-retard_livraison,moyen,2025-08-17,SUP_010
-retard_livraison,critique,2025-08-17,SUP_035
-defaut_qualite,moyen,2025-08-26,SUP_053
-defaut_qualite,moyen,2025-08-27,SUP_009
-retard_livraison,faible,2025-08-28,SUP_046
-retard_livraison,faible,2025-08-29,SUP_036
-defaut_qualite,faible,2025-08-31,SUP_018
-defaut_qualite,faible,2025-09-02,SUP_042
-retard_livraison,faible,2025-09-02,SUP_044
-probleme_logistique,faible,2025-09-06,SUP_005
-defaut_qualite,faible,2025-09-07,SUP_054
-retard_livraison,faible,2025-09-11,SUP_012
-probleme_logistique,critique,2025-09-13,SUP_051
-probleme_logistique,critique,2025-09-13,SUP_051
-defaut_qualite,moyen,2025-09-17,SUP_054
-retard_livraison,faible,2025-09-21,SUP_026
-retard_livraison,moyen,2025-09-25,SUP_010
-defaut_qualite,moyen,2025-09-26,SUP_044
-defaut_qualite,faible,2025-09-30,SUP_012
-retard_livraison,faible,2025-10-01,SUP_074
-retard_livraison,moyen,2025-10-04,SUP_054
-retard_livraison,moyen,2025-10-06,SUP_002
-defaut_qualite,moyen,2025-10-11,SUP_056
-retard_livraison,moyen,2025-10-21,SUP_009
-retard_livraison,moyen,2025-10-24,SUP_012
-defaut_qualite,faible,2025-10-27,SUP_008
-probleme_logistique,moyen,2025-10-29,SUP_070
-retard_livraison,moyen,2025-11-02,SUP_054
-probleme_logistique,moyen,2025-11-04,SUP_034
-retard_livraison,faible,2025-11-06,SUP_076
-defaut_qualite,critique,2025-11-06,SUP_070
-retard_livraison,faible,2025-11-10,SUP_054
-probleme_logistique,faible,2025-11-11,SUP_021
-defaut_qualite,critique,2025-11-16,SUP_035
-retard_livraison,moyen,2025-11-17,SUP_008
-defaut_qualite,faible,2025-11-17,SUP_035
-defaut_qualite,faible,2025-11-19,SUP_064
-probleme_logistique,faible,2025-11-19,SUP_021
-defaut_qualite,critique,2025-11-20,SUP_010
-retard_livraison,critique,2025-11-22,SUP_051
-retard_livraison,faible,2025-11-23,SUP_054
-retard_livraison,faible,2025-11-24,SUP_070
-retard_livraison,moyen,2025-11-28,SUP_035
-defaut_qualite,moyen,2025-11-29,SUP_051
-retard_livraison,moyen,2025-12-01,SUP_056
-retard_livraison,moyen,2025-12-01,SUP_072
-retard_livraison,critique,2025-12-02,SUP_053
-retard_livraison,moyen,2025-12-03,SUP_002
-retard_livraison,moyen,2025-12-04,SUP_039
-defaut_qualite,faible,2025-12-11,SUP_041
-retard_livraison,faible,2025-12-11,SUP_070
-retard_livraison,faible,2025-12-15,SUP_076
-retard_livraison,moyen,2025-12-17,SUP_056
-retard_livraison,moyen,2025-12-22,SUP_009
-retard_livraison,faible,2025-12-23,SUP_060
-retard_livraison,moyen,2025-12-24,SUP_041
-retard_livraison,faible,2025-12-27,SUP_035
-retard_livraison,faible,2025-12-28,SUP_034
-defaut_qualite,faible,2026-01-04,SUP_054
-defaut_qualite,faible,2026-01-05,SUP_019
-defaut_qualite,faible,2026-01-07,SUP_019
-retard_livraison,moyen,,SUP_034
-retard_livraison,critique,,SUP_034
-defaut_qualite,critique,,SUP_070
+retard_livraison,critique,2024-01-01,Goncalves Services
+retard_livraison,faible,2024-01-10,Guillou Gautier et Fils
+defaut_qualite,moyen,2024-01-15,Rey Bodin S.A.S.
+defaut_qualite,moyen,2024-01-23,François Supply
+retard_livraison,critique,2024-01-24,Pinto Gillet SARL
+retard_livraison,faible,2024-02-04,Guillon Distribution
+retard_livraison,faible,2024-02-05,Cordier Services
+retard_livraison,faible,2024-02-09,Duhamel Wagner SARL
+retard_livraison,moyen,2024-02-12,Hoareau SA
+retard_livraison,moyen,2024-02-16,Rocher Briand SARL
+defaut_qualite,moyen,2024-02-20,Pruvost Vasseur SA
+defaut_qualite,faible,2024-02-24,Duhamel Wagner SARL
+probleme_logistique,faible,2024-03-01,Hoareau SA
+defaut_qualite,critique,2024-03-03,Guillon Distribution
+retard_livraison,moyen,2024-03-03,Meyer Services
+retard_livraison,faible,2024-03-03,Roussel Gillet SARL
+retard_livraison,faible,2024-03-04,Gimenez Payet et Fils
+probleme_logistique,faible,2024-03-04,Gay Trading
+defaut_qualite,faible,2024-03-07,Joly Supply
+retard_livraison,critique,2024-03-08,Fischer Muller SA
+retard_livraison,critique,2024-03-15,Joubert Chauveau S.A.
+defaut_qualite,moyen,2024-03-16,Brunet Besson S.A.
+defaut_qualite,moyen,2024-03-17,Regnier Trading
+defaut_qualite,critique,2024-03-19,Regnier Trading
+retard_livraison,faible,2024-03-23,Barre Trading
+defaut_qualite,critique,2024-03-26,Pruvost Trading
+defaut_qualite,moyen,2024-03-29,Regnier Trading
+defaut_qualite,faible,2024-03-29,Clément et Fils
+defaut_qualite,faible,2024-03-31,François Supply
+retard_livraison,moyen,2024-04-02,Pinto Gillet SARL
+retard_livraison,faible,2024-04-03,Bègue Didier S.A.R.L.
+retard_livraison,faible,2024-04-06,Rocher Briand SARL
+defaut_qualite,faible,2024-04-11,Pinto Gillet SARL
+retard_livraison,moyen,2024-04-12,Pinto Gillet SARL
+retard_livraison,moyen,2024-04-17,Duhamel Wagner SARL
+retard_livraison,critique,2024-04-19,Meyer Services
+retard_livraison,moyen,2024-04-25,Leconte Da Costa et Fils
+retard_livraison,moyen,2024-04-27,Guillon Distribution
+defaut_qualite,faible,2024-04-30,Mathieu Supply
+retard_livraison,faible,2024-05-01,Cordier Services
+defaut_qualite,moyen,2024-05-06,Regnier Trading
+defaut_qualite,moyen,2024-05-07,Clément et Fils
+retard_livraison,faible,2024-05-08,Regnier Trading
+retard_livraison,critique,2024-05-08,Pruvost Trading
+retard_livraison,faible,2024-05-08,Gillet SA Logistics
+defaut_qualite,faible,2024-05-09,François Supply
+defaut_qualite,moyen,2024-05-10,De Sousa Bernard et Fils
+defaut_qualite,moyen,2024-05-10,Meyer Services
+retard_livraison,faible,2024-05-10,Lecoq Distribution
+probleme_logistique,faible,2024-05-13,Pruvost Trading
+retard_livraison,faible,2024-05-15,Lopes Laroche S.A.R.L.
+retard_livraison,moyen,2024-05-16,Duhamel Wagner SARL
+retard_livraison,faible,2024-05-17,Hoareau SA
+retard_livraison,moyen,2024-05-18,Verdier Supply
+retard_livraison,faible,2024-06-01,Regnier Trading
+retard_livraison,faible,2024-06-02,Hoareau SA
+defaut_qualite,faible,2024-06-02,Pinto Gillet SARL
+retard_livraison,moyen,2024-06-05,Guillon Distribution
+retard_livraison,faible,2024-06-06,Pinto Gillet SARL
+defaut_qualite,moyen,2024-06-07,Gillet SA Logistics
+retard_livraison,moyen,2024-06-08,Rocher Briand SARL
+retard_livraison,faible,2024-06-10,Ledoux Marques SA
+retard_livraison,critique,2024-06-11,Rocher Briand SARL
+defaut_qualite,faible,2024-06-12,Delannoy Langlois S.A.R.L.
+probleme_logistique,critique,2024-06-13,Gillet SA Logistics
+probleme_logistique,moyen,2024-06-15,Marie Distribution
+probleme_logistique,moyen,2024-06-21,Pottier Germain SA
+retard_livraison,moyen,2024-06-22,Clément et Fils
+retard_livraison,faible,2024-07-12,Regnier Trading
+retard_livraison,moyen,2024-07-14,Rocher Briand SARL
+probleme_logistique,faible,2024-07-17,Navarro Supply
+defaut_qualite,moyen,2024-07-18,Cordier Services
+defaut_qualite,moyen,2024-07-18,Cordier Services
+defaut_qualite,moyen,2024-07-21,Pinto Gillet SARL
+retard_livraison,faible,2024-07-23,Regnier Trading
+retard_livraison,faible,2024-07-24,Rocher Briand SARL
+retard_livraison,moyen,2024-07-27,Pinto Gillet SARL
+retard_livraison,faible,2024-07-30,Rocher Briand SARL
+defaut_qualite,faible,2024-07-31,Gimenez Payet et Fils
+retard_livraison,moyen,2024-08-02,Rémy SA Distribution
+defaut_qualite,faible,2024-08-08,Rocher Briand SARL
+probleme_logistique,critique,2024-08-14,Pinto Gillet SARL
+retard_livraison,faible,2024-08-21,Verdier Supply
+defaut_qualite,moyen,2024-08-24,Gillet SA Logistics
+defaut_qualite,moyen,2024-08-25,Rocher Briand SARL
+retard_livraison,faible,2024-09-01,Pruvost Trading
+retard_livraison,critique,2024-09-13,Goncalves Services
+probleme_logistique,critique,2024-09-17,Regnier Trading
+probleme_logistique,faible,2024-09-18,François Supply
+retard_livraison,moyen,2024-09-20,Cordier Services
+defaut_qualite,faible,2024-09-20,Rocher Briand SARL
+probleme_logistique,critique,2024-09-22,Rocher Briand SARL
+retard_livraison,critique,2024-10-03,Meyer Services
+probleme_logistique,faible,2024-10-05,Rey Bodin S.A.S.
+retard_livraison,moyen,2024-10-10,Regnier Trading
+probleme_logistique,moyen,2024-10-13,Hoareau SA
+retard_livraison,faible,2024-10-13,Barre Trading
+defaut_qualite,faible,2024-10-14,François Supply
+retard_livraison,faible,2024-10-20,Cordier Services
+defaut_qualite,moyen,2024-10-24,Pinto Gillet SARL
+defaut_qualite,faible,2024-10-27,Guilbert S.A.
+defaut_qualite,faible,2024-10-27,Rocher Briand SARL
+retard_livraison,faible,2024-10-29,Rocher Briand SARL
+probleme_logistique,faible,2024-10-31,Brunet Besson S.A.
+defaut_qualite,faible,2024-11-01,Regnier Trading
+probleme_logistique,faible,2024-11-02,Rey Bodin S.A.S.
+retard_livraison,moyen,2024-11-04,Hoareau SA
+defaut_qualite,faible,2024-11-05,Bousquet Trading
+defaut_qualite,moyen,2024-11-05,Hoareau SA
+probleme_logistique,faible,2024-11-08,Pinto Gillet SARL
+retard_livraison,faible,2024-11-11,Rocher Briand SARL
+defaut_qualite,faible,2024-11-13,Joubert Chauveau S.A.
+retard_livraison,faible,2024-11-21,Verdier Supply
+defaut_qualite,faible,2024-11-23,Mathieu Supply
+probleme_logistique,faible,2024-11-24,Rey Bodin S.A.S.
+retard_livraison,moyen,2024-12-07,Gillet SA Logistics
+probleme_logistique,moyen,2024-12-12,Regnier Trading
+retard_livraison,moyen,2024-12-14,Gillet SA Logistics
+defaut_qualite,moyen,2024-12-14,Marie Distribution
+retard_livraison,moyen,2024-12-14,Rocher Briand SARL
+retard_livraison,moyen,2024-12-16,Rocher Briand SARL
+probleme_logistique,faible,2024-12-19,Bègue Didier S.A.R.L.
+retard_livraison,moyen,2024-12-19,Pinto Gillet SARL
+retard_livraison,moyen,2024-12-19,Rocher Briand SARL
+retard_livraison,faible,2024-12-22,Gimenez Payet et Fils
+defaut_qualite,moyen,2024-12-22,Regnier Trading
+probleme_logistique,moyen,2024-12-27,Duhamel Wagner SARL
+retard_livraison,moyen,2024-12-28,Rocher Briand SARL
+defaut_qualite,faible,2024-12-29,Guilbert S.A.
+retard_livraison,moyen,2024-12-31,Gillet SA Logistics
+retard_livraison,faible,2025-01-02,Pruvost Trading
+retard_livraison,moyen,2025-01-06,Goncalves Services
+retard_livraison,faible,2025-01-20,Pinto Gillet SARL
+retard_livraison,faible,2025-01-26,François Supply
+retard_livraison,moyen,2025-01-29,Guillou Gautier et Fils
+defaut_qualite,faible,2025-02-05,Lenoir Supply
+retard_livraison,faible,2025-02-17,Verdier Supply
+defaut_qualite,faible,2025-02-21,Mathieu Supply
+retard_livraison,critique,2025-03-10,Clément et Fils
+retard_livraison,faible,2025-03-10,Duhamel Wagner SARL
+retard_livraison,moyen,2025-03-14,Bègue Didier S.A.R.L.
+defaut_qualite,faible,2025-03-18,Rocher Briand SARL
+retard_livraison,faible,2025-03-27,Fischer Muller SA
+probleme_logistique,faible,2025-04-07,Moreau Supply
+defaut_qualite,faible,2025-04-07,Clément et Fils
+retard_livraison,faible,2025-04-11,Gimenez Payet et Fils
+retard_livraison,faible,2025-04-15,Rocher Briand SARL
+retard_livraison,critique,2025-04-20,Rocher Briand SARL
+defaut_qualite,faible,2025-04-28,Duhamel Wagner SARL
+retard_livraison,faible,2025-04-29,François Supply
+probleme_logistique,faible,2025-05-03,Rolland SA
+retard_livraison,faible,2025-05-05,Duhamel Wagner SARL
+retard_livraison,moyen,2025-05-08,Pinto Gillet SARL
+retard_livraison,moyen,2025-05-17,Gillet SA Logistics
+retard_livraison,faible,2025-05-22,Cordier Services
+defaut_qualite,faible,2025-05-22,Meyer Services
+defaut_qualite,moyen,2025-05-28,Joubert Chauveau S.A.
+defaut_qualite,faible,2025-05-31,Meunier Logistics
+probleme_logistique,moyen,2025-06-01,Bazin Briand S.A.S.
+probleme_logistique,moyen,2025-06-04,Hoareau SA
+defaut_qualite,faible,2025-06-09,Rocher Briand SARL
+retard_livraison,moyen,2025-06-11,Pruvost Trading
+retard_livraison,moyen,2025-06-11,Rocher Briand SARL
+retard_livraison,faible,2025-06-11,Pinto Gillet SARL
+retard_livraison,moyen,2025-06-12,François Supply
+retard_livraison,moyen,2025-06-24,Meyer Services
+retard_livraison,moyen,2025-06-30,Rémy SA Distribution
+retard_livraison,moyen,2025-07-03,Rocher Briand SARL
+defaut_qualite,faible,2025-07-05,Pinto Gillet SARL
+retard_livraison,faible,2025-07-08,Guillon Distribution
+retard_livraison,moyen,2025-07-12,Guillon Distribution
+probleme_logistique,faible,2025-07-13,François Supply
+retard_livraison,faible,2025-07-15,Lecomte Trading
+retard_livraison,faible,2025-07-16,Cordier Services
+retard_livraison,faible,2025-07-18,Pinto Gillet SARL
+retard_livraison,faible,2025-07-19,Duhamel Wagner SARL
+defaut_qualite,moyen,2025-07-21,Pruvost S.A.S.
+defaut_qualite,moyen,2025-07-22,Rey Bodin S.A.S.
+defaut_qualite,faible,2025-07-24,Gillet SA Logistics
+retard_livraison,faible,2025-07-29,Gimenez Payet et Fils
+probleme_logistique,moyen,2025-07-31,Vasseur Services
+retard_livraison,moyen,2025-08-01,Duhamel Wagner SARL
+defaut_qualite,faible,2025-08-03,Maury S.A.R.L.
+probleme_logistique,faible,2025-08-08,Neveu et Fils
+defaut_qualite,critique,2025-08-11,Rocher Briand SARL
+retard_livraison,faible,2025-08-13,Rocher Briand SARL
+retard_livraison,faible,2025-08-16,Roussel Gillet SARL
+defaut_qualite,moyen,2025-08-19,Marie Distribution
+defaut_qualite,moyen,2025-08-19,Cordier Services
+defaut_qualite,critique,2025-08-21,Cordier Services
+probleme_logistique,critique,2025-08-22,Joubert Chauveau S.A.
+defaut_qualite,faible,2025-08-23,Guillou Gautier et Fils
+defaut_qualite,moyen,2025-08-25,François Supply
+defaut_qualite,faible,2025-08-28,Rolland SA
+defaut_qualite,faible,2025-08-31,Fischer Muller SA
+retard_livraison,faible,2025-09-05,François Supply
+defaut_qualite,faible,2025-09-05,Faivre SA Logistics
+retard_livraison,moyen,2025-09-08,Rey Bodin S.A.S.
+retard_livraison,faible,2025-09-09,Verdier Supply
+retard_livraison,faible,2025-09-10,Pinto Gillet SARL
+defaut_qualite,faible,2025-09-13,Rocher Briand SARL
+retard_livraison,faible,2025-09-15,Marie Distribution
+defaut_qualite,critique,2025-09-19,Rey Bodin S.A.S.
+defaut_qualite,moyen,2025-09-20,Guillon Distribution
+defaut_qualite,moyen,2025-09-23,François Supply
+defaut_qualite,faible,2025-09-27,Barre Trading
+probleme_logistique,faible,2025-09-29,Guillou Gautier et Fils
+retard_livraison,moyen,2025-10-01,Rocher Briand SARL
+probleme_logistique,moyen,2025-10-05,Verdier Supply
+retard_livraison,moyen,2025-10-09,Roussel Gillet SARL
+retard_livraison,moyen,2025-10-12,François Supply
+defaut_qualite,critique,2025-10-14,Hoareau SA
+retard_livraison,moyen,2025-10-18,Guillon Distribution
+retard_livraison,faible,2025-10-19,Vasseur Services
+defaut_qualite,faible,2025-10-27,Brunet et Fils
+defaut_qualite,moyen,2025-10-29,Joseph SARL
+retard_livraison,faible,2025-10-31,Rocher Briand SARL
+probleme_logistique,faible,2025-11-09,Barre Trading
+retard_livraison,faible,2025-11-16,Rodriguez Delmas S.A.R.L.
+retard_livraison,faible,2025-11-26,Fischer Muller SA
+defaut_qualite,moyen,2025-11-28,Gillet SA Logistics
+retard_livraison,critique,2025-12-01,François Supply
+defaut_qualite,faible,2025-12-01,Joubert Chauveau S.A.
+retard_livraison,faible,2025-12-02,Guillon Distribution
+defaut_qualite,faible,2025-12-06,Pinto Gillet SARL
+defaut_qualite,moyen,2025-12-07,Maury S.A.R.L.
+retard_livraison,faible,2025-12-08,Rocher Briand SARL
+retard_livraison,moyen,2025-12-08,Cordier Services
+retard_livraison,faible,2025-12-09,Bazin et Fils
+defaut_qualite,moyen,2025-12-10,Pruvost Trading
+retard_livraison,critique,2025-12-10,Pinto Gillet SARL
+defaut_qualite,moyen,2025-12-11,Pinto Gillet SARL
+retard_livraison,faible,2025-12-17,Regnier Trading
+defaut_qualite,faible,2025-12-23,Joly Gallet SA
+defaut_qualite,moyen,2025-12-24,Hoareau SA
+retard_livraison,faible,2025-12-25,Bazin Briand S.A.S.
+retard_livraison,moyen,2025-12-31,Laurent et Fils
+retard_livraison,faible,2026-01-01,Joubert Chauveau S.A.
+retard_livraison,faible,,Monnier Logistics
+defaut_qualite,faible,,Cordier Services
+retard_livraison,critique,,Rocher Briand SARL
+retard_livraison,faible,,Regnier Trading
+defaut_qualite,moyen,,Fischer Muller SA
+retard_livraison,moyen,,Duhamel Wagner SARL
