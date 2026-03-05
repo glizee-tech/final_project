@@ -1,0 +1,5 @@
+env_achat/
+__pycache__/
+*.pyc
+.env
+.ipynb_checkpoints
