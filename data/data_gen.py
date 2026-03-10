@@ -171,6 +171,32 @@ def make_partial_duplicate_supplier(row: dict) -> dict:
         new_row["city"] = maybe_case_noise(new_row["city"])
     return new_row
 
+def parse_mixed_date(date_value):
+    """
+    Parse plusieurs formats de date utilisés dans le dataset.
+    Retourne un datetime ou None.
+    """
+    if date_value is None or date_value in ["", " "]:
+        return None
+
+    if isinstance(date_value, (int, float)):
+        return None
+
+    formats = [
+        "%Y-%m-%d",
+        "%Y-%m-%dT%H:%M:%S",
+        "%Y/%m/%d",
+        "%d-%m-%Y",
+        "%Y-%m-%d",
+    ]
+
+    for fmt in formats:
+        try:
+            return datetime.strptime(str(date_value), fmt)
+        except ValueError:
+            continue
+
+    return None
 
 # =========================================================
 # 1) SUPPLIERS.PARQUET
@@ -313,30 +339,153 @@ for idx in random.sample(range(len(orders)), k=12):
 # =========================================================
 incidents = []
 
-# On essaie de lier une partie des incidents à des commandes
-valid_order_ids_for_incidents = [
-    o["order_id"] for o in orders
-    if o.get("order_id") not in [None, "", " "] and isinstance(o.get("order_id"), (int, float))
+# ---------------------------------------------------------
+# A. Identifier les commandes réellement en retard
+# ---------------------------------------------------------
+late_orders = []
+
+for order in orders:
+    order_id = order.get("order_id")
+    supplier_id = order.get("supplier_id")
+
+    order_date = parse_mixed_date(order.get("order_date"))
+    expected_date = parse_mixed_date(order.get("delivery_date_expected"))
+    actual_date = parse_mixed_date(order.get("delivery_date_actual"))
+
+    # On garde seulement les commandes exploitables
+    if (
+        order_id not in [None, "", " "]
+        and supplier_id is not None
+        and order_date is not None
+        and expected_date is not None
+        and actual_date is not None
+        and actual_date > expected_date
+    ):
+        late_orders.append({
+            "order_id": order_id,
+            "supplier_id": supplier_id,
+            "order_date": order_date,
+            "delivery_date_expected": expected_date,
+            "delivery_date_actual": actual_date,
+            "delay_days": (actual_date - expected_date).days
+        })
+
+# ---------------------------------------------------------
+# B. Générer les incidents delivery_delay de façon cohérente
+# ---------------------------------------------------------
+for late_order in late_orders:
+    # On ne crée pas forcément un incident pour 100% des retards
+    if random.random() < 0.70:
+        start_date = late_order["order_date"]
+        end_date = late_order["delivery_date_actual"] + timedelta(days=3)
+
+        if end_date >= start_date:
+            incident_date = start_date + timedelta(
+                days=random.randint(0, (end_date - start_date).days)
+            )
+        else:
+            incident_date = late_order["delivery_date_actual"]
+
+        delay_days = late_order["delay_days"]
+
+        # Gravité liée au retard réel
+        if delay_days <= 1:
+            severity = random.choices(
+                ["low", "medium"],
+                weights=[0.7, 0.3]
+            )[0]
+        elif delay_days <= 3:
+            severity = random.choices(
+                ["medium", "high"],
+                weights=[0.6, 0.4]
+            )[0]
+        else:
+            severity = random.choices(
+                ["high", "critical"],
+                weights=[0.7, 0.3]
+            )[0]
+
+        incidents.append({
+            "incident_type": "delivery_delay",
+            "severity": severity,
+            "incident_date": maybe_multiformat_date(incident_date),  # FMT-01
+            "supplier_id": late_order["supplier_id"],
+            "order_id": late_order["order_id"],
+            "description": f"Delivery delay detected: {delay_days} day(s) late."
+        })
+# ---------------------------------------------------------
+# C. Générer les autres incidents EN PLUS des delivery_delay
+# ---------------------------------------------------------
+other_incident_types = [
+    "quality_issue",
+    "damaged_goods",
+    "missing_items",
+    "documentation_problem",
 ]
 
-for i in range(N_INCIDENTS):
+valid_orders_for_other_incidents = []
+for o in orders:
+    order_id = o.get("order_id")
+    supplier_id = o.get("supplier_id")
+
+    if order_id not in [None, "", " "] and supplier_id is not None:
+        valid_orders_for_other_incidents.append({
+            "order_id": order_id,
+            "supplier_id": supplier_id
+        })
+
+# Nombre d'autres incidents à ajouter
+#N_OTHER_INCIDENTS = 120
+# Variante dynamique possible :
+N_OTHER_INCIDENTS = max(50, int(len(late_orders) * 0.8))
+
+for _ in range(N_OTHER_INCIDENTS):
     incident_date = random_date(datetime(2026, 1, 1), END_DATE)
-    supplier_id = random.choice(valid_supplier_ids)
 
-    row = {
-        "incident_type": random.choice(INCIDENT_TYPES),
-        "severity": random.choice(SEVERITIES),
-        "incident_date": maybe_multiformat_date(incident_date),  # FMT-01
+    linked_order = random.choice(valid_orders_for_other_incidents) if valid_orders_for_other_incidents else None
+
+    if linked_order:
+        supplier_id = linked_order["supplier_id"]
+        order_id = linked_order["order_id"]
+    else:
+        supplier_id = random.choice(valid_supplier_ids)
+        order_id = None
+
+    severity = random.choices(
+        ["low", "medium", "high", "critical"],
+        weights=[0.5, 0.3, 0.15, 0.05]
+    )[0]
+
+    incidents.append({
+        "incident_type": random.choice(other_incident_types),
+        "severity": severity,
+        "incident_date": maybe_multiformat_date(incident_date),
         "supplier_id": supplier_id,
-        "order_id": random.choice(valid_order_ids_for_incidents) if valid_order_ids_for_incidents else None,
+        "order_id": order_id,
         "description": fake.sentence(nb_words=8),
-    }
-    incidents.append(row)
+    })
 
-# CAS-02 + CAS-03 : espaces autour de incident_type
-for idx in random.sample(range(len(incidents)), k=25):
+# ---------------------------------------------------------
+# D. Injecter les pièges restants sur incidents.csv
+# ---------------------------------------------------------
+
+# CAS-02 + CAS-03 : espaces début/fin sur incident_type
+for idx in random.sample(range(len(incidents)), k=min(25, len(incidents))):
     incidents[idx]["incident_type"] = maybe_space_noise(incidents[idx]["incident_type"])
 
+# NUL-01 : quelques NULL natifs
+for idx in random.sample(range(len(incidents)), k=min(6, len(incidents))):
+    incidents[idx]["description"] = None
+
+# ID-01 : doublons exacts
+exact_duplicate_incidents = random.sample(incidents, k=min(6, len(incidents)))
+incidents.extend([row.copy() for row in exact_duplicate_incidents])
+
+# ID-03 : identifiant manquant sur certaines lignes
+for idx in random.sample(range(len(incidents)), k=min(6, len(incidents))):
+    incidents[idx]["order_id"] = random.choice([None, "", " "])
+
+random.shuffle(incidents)
 df_incidents = pd.DataFrame(incidents)
 
 # =========================================================
@@ -357,6 +506,16 @@ df_incidents.to_csv(OUTPUT_INCIDENTS_CSV, index=False)
 # =========================================================
 # QUICK CHECK
 # =========================================================
+
+
+delivery_delay_count = (df_incidents["incident_type"].astype(str).str.strip() == "delivery_delay").sum()
+print(f"\nDelivery delay incidents generated from real late orders: {delivery_delay_count}")
+print("\nSample delivery_delay incidents:")
+print(
+    df_incidents[
+        df_incidents["incident_type"].astype(str).str.strip() == "delivery_delay"
+    ].head(10).to_string(index=False)
+)
 print("✅ Files generated:")
 print(f" - {OUTPUT_ORDERS_JSON}: {len(orders)} records")
 print(f" - {OUTPUT_SUPPLIERS_PARQUET}: {df_suppliers.shape}")

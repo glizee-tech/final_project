@@ -1,221 +1,556 @@
 incident_type,severity,incident_date,supplier_id,order_id,description
- documentation_problem,high,06-01-2026,60,1470.0,Card good full poor store range wonder long.
-missing_items,high,01-03-2026,56,1331.0,Specific as simply leader fall analysis.
- delivery_delay,medium,04-02-2026,49,1245.0,Though firm financial huge spring list.
-damaged_goods,low,2026/02/03,10,1522.0,Send course ground sit tend.
-delivery_delay,high,2026-3-7,70,1105.0,Event son join hundred keep what fund cost.
-damaged_goods,low,2026-01-16T00:00:00,10,1211.0,Happen something entire bar interesting issue yet Congress family.
-damaged_goods,high,2026/02/12,26,1287.0,Bag produce fill owner international.
-quality_issue,high,2026-01-25,78,1313.0,Goal amount thank good your ever woman way avoid.
-missing_items,critical,2026-02-06T00:00:00,45,1012.0,Guy song quickly well central parent sit alone.
-quality_issue,critical,2026-3-2,66,1238.0,Door population gun we allow.
-quality_issue,critical,27-01-2026,61,1355.0,Quickly we head several off morning.
-quality_issue,critical,11-01-2026,41,1220.0,Fire everything whether ago control military trial brother.
-documentation_problem,low,2026/02/26,58,1148.0,Region Democrat partner really your customer career.
-delivery_delay,critical,2026/01/17,40,1354.0,Later together knowledge because radio.
-missing_items,critical,2026-01-29T00:00:00,54,1313.0,Property remember nearly face feel church remember record.
-delivery_delay,low,2026-2-11,76,1163.0,Soldier meeting building cut catch so.
-documentation_problem,critical,12-02-2026,73,1215.0,Guess occur level work candidate.
-documentation_problem,critical,2026-2-20,9,1495.0,Assume huge response long improve.
-documentation_problem,critical,2026/01/14,43,1099.0,Statement available win politics last quite general there.
-documentation_problem,medium,2026-01-22,14,1509.0,Policy consider whom item treat area buy check clearly follow.
-quality_issue,low,04-01-2026,24,1296.0,Generation wait thus suffer economy play nearly.
-damaged_goods,low,27-01-2026,30,1060.0,Person pass behavior political option oil.
-delivery_delay,medium,2026/02/17,67,1427.0,Probably result painting successful nor stay.
-delivery_delay,medium,2026-02-20T00:00:00,21,1435.0,Ball we side enough decision.
-missing_items,medium,2026-3-3,9,1216.0,Indicate police marriage phone face what lot source rate father.
-missing_items,medium,2026-02-09T00:00:00,56,1598.0,Read citizen indeed less future.
-quality_issue,critical,2026/02/09,76,1212.0,Fine responsibility safe team wish candidate.
-missing_items,low,01-01-2026,19,1258.0,Middle blood drop business last cell anything war.
-documentation_problem,critical,09-03-2026,43,1482.0,Industry while total spend value return couple city you level these.
-damaged_goods,critical,2026/01/06,12,1311.0,Age war measure whom Democrat good anything manager think.
-quality_issue,critical,2026-2-20,79,1189.0,Experience account blue care enough hand idea and anything.
-missing_items,medium,2026-02-25T00:00:00,59,1101.0,Crime network available mean share evidence writer quite budget window.
-quality_issue,medium,2026/02/20,6,1559.0,Health would newspaper hand certain own husband American.
-quality_issue,critical,07-02-2026,9,1576.0,Case four listen lead paper.
-delivery_delay,low,2026-01-16T00:00:00,48,1340.0,Cause use five hotel pattern successful order medical meeting majority.
-quality_issue,high,2026-2-22,58,1527.0,Feel staff happy purpose woman on someone rise read ago.
-delivery_delay,low,06-01-2026,60,1397.0,Enter pretty will official dinner anything lose modern return.
-quality_issue,critical,2026-02-13,52,1010.0,Challenge quite all way body affect finish charge.
-quality_issue,high,02-02-2026,15,1505.0,Improve simple turn their save artist.
-delivery_delay,medium,01-03-2026,9,1149.0,Million night your long heavy what.
-quality_issue ,medium,2026-03-02,36,1107.0,Treatment garden great sign return poor really particular court.
-delivery_delay,critical,2026-1-23,38,1083.0,Everything fear walk word side relate real.
-quality_issue,critical,2026/01/02,35,1188.0,First give value somebody event business quality here woman.
-documentation_problem ,medium,28-01-2026,5,1048.0,West source fact explain research get kind either.
-missing_items,high,08-03-2026,14,1053.0,Degree still even no even body scientist dream anything.
-missing_items,medium,2026-1-1,7,1390.0,Difficult do beyond form line race case who within citizen.
-delivery_delay,low,31-01-2026,26,1028.0,Local current white fly position traditional become off movement.
-quality_issue ,low,2026-1-2,44,1102.0,Tree company think compare try.
-delivery_delay,critical,2026-01-22T00:00:00,22,1115.0,Small control see the face also fear owner.
-documentation_problem,medium,2026-02-11T00:00:00,42,1218.0,Expect writer myself management voice surface life cover.
-delivery_delay,medium,2026-2-20,55,1113.0,Former room possible responsibility add.
-quality_issue,low,15-02-2026,42,1330.0,So nothing serious compare task today still middle.
- quality_issue,critical,2026-1-2,50,1071.0,Husband believe word local very.
-damaged_goods,low,2026-02-05,80,1229.0,End dog send west.
-documentation_problem,critical,2026-02-22,39,1558.0,Old of end growth door property let.
- delivery_delay,high,22-01-2026,33,1142.0,If maybe time region financial brother.
-damaged_goods,critical,2026-02-12,23,1350.0,Happen determine whatever long lawyer writer health.
-documentation_problem,critical,03-01-2026,78,1532.0,Tree serious soon stay seven quite other skin moment month.
-documentation_problem,low,2026-1-30,65,1021.0,Back nor article natural measure of change foreign.
-quality_issue,critical,2026-1-16,40,1085.0,Kind quite response major together knowledge argue car indeed nor.
-damaged_goods,critical,2026/01/08,18,1212.0,Left southern rich how staff second official and general as.
-quality_issue,low,2026-1-20,49,1463.0,Various attorney value all important.
-damaged_goods,high,2026-02-12,18,1542.0,She within position inside year him.
-delivery_delay,medium,2026/02/23,37,1357.0,Heart radio product much president girl condition Mr.
-documentation_problem,low,2026-2-1,27,1233.0,Camera without strong series without leg rest interest here discover.
-damaged_goods,medium,18-02-2026,67,1006.0,Get every visit right both special information she this.
- delivery_delay,medium,2026-01-09,63,1150.0,Drive attack order land.
-delivery_delay,medium,2026-01-27T00:00:00,17,1571.0,Each analysis keep music senior.
-documentation_problem,low,27-01-2026,31,1487.0,Cell year doctor trouble office.
-quality_issue,medium,09-02-2026,22,1186.0,Our pull fly few century produce determine feel article we.
-damaged_goods,critical,2026-2-1,39,1284.0,Personal interview many win walk provide.
-damaged_goods,critical,03-03-2026,11,1177.0,Five indicate chance heavy senior list support feeling remain south.
-missing_items,critical,2026-3-2,57,1502.0,None whose newspaper care drug.
-missing_items,low,2026/01/03,49,1559.0,Form bad last he movie stop.
-quality_issue,high,20-01-2026,71,1483.0,Environmental purpose owner them could.
- damaged_goods,critical,2026-02-09T00:00:00,59,1501.0,Right next look thank four whatever address view while bring.
-quality_issue,critical,2026-1-10,43,1164.0,Trial receive region however dream focus executive letter possible.
-delivery_delay,high,25-01-2026,1,1421.0,End mention market better wonder light style.
-damaged_goods,critical,23-02-2026,51,1322.0,Have including none determine certainly end.
-delivery_delay,low,10-01-2026,53,1589.0,Often individual charge form here street material pressure range either.
-missing_items,high,2026/01/21,25,1530.0,Whom politics make collection some college result major true.
-delivery_delay,critical,04-03-2026,48,1258.0,Wrong whatever model stuff avoid stand any according case piece.
-delivery_delay,high,2026-02-01,62,1157.0,Religious across media health pay.
-missing_items,medium,2026/02/03,78,1259.0,Tree process administration mother in admit reveal movie expert maybe recently.
-delivery_delay,low,21-01-2026,2,1414.0,South travel blood benefit chance court money spring environment.
-quality_issue,critical,2026-1-11,67,1445.0,Bad where learn during recently feel stock ball.
-documentation_problem,critical,2026-02-02T00:00:00,39,1322.0,Behavior here need argue act.
-delivery_delay,high,2026-2-22,12,1281.0,Bar suddenly population former with wind.
-damaged_goods,low,2026-1-27,51,1512.0,Try discover top realize note even under range exactly myself.
-delivery_delay,critical,2026-01-01T00:00:00,13,1433.0,Conference sure administration debate certain.
-quality_issue,medium,2026/02/06,56,1196.0,Up federal nor note support quality music himself.
-missing_items,medium,2026-01-18T00:00:00,26,1117.0,So ready bad seat generation best.
-quality_issue,medium,2026-2-27,73,1062.0,Stuff future shoulder western however similar ahead.
-damaged_goods,critical,24-01-2026,25,1116.0,Situation late direction need heart control one.
-damaged_goods,low,22-01-2026,11,1133.0,Beat peace something require bank child Republican plant.
-damaged_goods,low,2026-02-05T00:00:00,9,1246.0,First blood accept final growth especially car cost.
-delivery_delay,low,2026-03-03,63,1278.0,News mention billion bed never others six tell activity.
-delivery_delay,low,2026-1-1,75,1543.0,Hold be top toward within occur college herself.
-documentation_problem,high,01-01-2026,49,1493.0,Especially environmental certainly cold every feel.
-missing_items,high,2026/02/13,78,1358.0,Guess want result many pattern.
-damaged_goods,critical,10-02-2026,31,1060.0,Blood fight we forward per sound forget friend spring.
-delivery_delay,low,15-02-2026,43,1418.0,Carry fly water cut fire who why fact reason make.
-documentation_problem,low,2026-01-18T00:00:00,4,1292.0,Site for exactly skill half usually customer young conference should.
-missing_items,critical,2026-02-01T00:00:00,48,1430.0,Well left remain just fact.
-damaged_goods,low,2026/01/25,1,1046.0,Standard somebody important material plan.
-quality_issue,critical,11-02-2026,57,1087.0,Education child institution help last our old.
-missing_items,low,14-02-2026,55,1306.0,Media turn reality myself so growth time Mr point be.
-documentation_problem,low,2026-1-25,19,1518.0,Price great positive and worker quality hundred.
-documentation_problem,critical,2026-1-12,39,1465.0,Whole involve action else member million oil offer.
-documentation_problem,medium,2026-1-15,62,1222.0,Hear leg quickly real character young lot far turn.
-delivery_delay,critical,2026-01-22,12,1170.0,Break wait center find lay.
-damaged_goods,medium,2026/02/11,50,1496.0,Miss give best reveal laugh attack.
-documentation_problem,critical,2026-01-16,18,1347.0,Special boy support possible quality.
-documentation_problem,low,2026/01/29,74,1393.0,Upon scientist might necessary former interview.
-missing_items,medium,2026-2-18,72,1271.0,Discussion if continue policy it ahead pass culture or.
-delivery_delay,low,2026-01-15,38,1355.0,Above Democrat everything region somebody officer son Mr.
- documentation_problem,high,2026-1-25,15,1327.0,For leader energy television month police others particularly.
-delivery_delay,high,2026-02-18,74,1557.0,Box goal leader common purpose song try opportunity public finish.
-missing_items,high,2026/01/25,50,1135.0,Figure consumer really memory industry case himself.
-documentation_problem,medium,2026-03-08,78,1411.0,Main Mr try us community cold.
-missing_items,high,2026-1-2,69,1310.0,Cell fire late approach grow act carry.
-missing_items,medium,2026-01-29T00:00:00,64,1296.0,White measure manager range indeed style major bar.
-documentation_problem,high,2026/01/19,5,1523.0,Somebody determine allow different eye.
-documentation_problem,critical,2026-1-16,36,1515.0,Not significant manager member of environmental myself yard my.
-delivery_delay,high,2026-2-7,49,1221.0,Service kid despite interesting save.
-quality_issue,critical,29-01-2026,7,1313.0,Fear yourself last give stage keep yes.
-documentation_problem,critical,2026/01/21,3,1439.0,Decide scene ready technology particular into pattern.
-missing_items,critical,2026-03-02,45,1549.0,Spend south now mother others collection.
- quality_issue,critical,2026-02-06,37,1140.0,Eye environment teach world quickly believe while.
-delivery_delay,high,11-02-2026,75,1173.0,Try yeah term camera tend economic represent stock.
-missing_items,high,2026-1-18,57,1220.0,Majority officer environmental increase later plant they behavior.
-delivery_delay,high,2026-01-28T00:00:00,26,1109.0,Seek reason theory lawyer maintain old than suggest behavior will.
-missing_items,medium,2026-01-19,49,1102.0,Sure somebody huge why station manager follow exist.
-quality_issue,low,2026-02-15,61,1536.0,Official not magazine gas radio any between six least buy.
-missing_items,medium,13-02-2026,76,1256.0,Kid a when dark read car.
-quality_issue,critical,05-01-2026,16,1316.0,City usually ever pressure economy head tough.
-delivery_delay,critical,23-01-2026,49,1287.0,Appear personal rise sense investment before.
-delivery_delay,low,2026-02-26,48,1088.0,Ability live car difficult quite.
-documentation_problem,medium,2026-01-16,63,1596.0,Account gas building team.
-delivery_delay,medium,03-03-2026,36,1504.0,Local director become south billion happen.
-documentation_problem,medium,2026-02-25,39,1340.0,Case similar send card year central most.
- quality_issue,critical,2026-01-09,69,1410.0,Particular clearly goal defense.
-missing_items,low,2026-03-10T00:00:00,68,1320.0,Turn pattern kind describe to cause.
-quality_issue,low,2026-3-10,16,1190.0,Operation himself white fire cause everybody.
-missing_items,high,2026-01-01,72,1040.0,Easy over return expect wait.
-quality_issue,medium,2026-01-17,74,1585.0,Summer probably feeling military meeting.
-delivery_delay,low,2026-02-02T00:00:00,5,1312.0,Far approach today west manager both matter order.
-quality_issue,critical,2026-02-16,70,1260.0,Thousand activity guess first hit stuff inside national common likely.
-documentation_problem,high,2026-02-08T00:00:00,6,1464.0,Admit attack energy always art.
-missing_items,high,2026-01-18T00:00:00,74,1367.0,Media pick may indeed reduce bar Mr pattern.
-quality_issue,low,2026-03-10,66,1248.0,Base bad TV window choice force only.
- quality_issue,high,2026-1-5,25,1143.0,Financial join well draw each.
-damaged_goods,high,2026-1-28,76,1439.0,Break partner area program price compare actually case activity.
-damaged_goods,high,10-01-2026,71,1173.0,Well mission situation result cold camera sit environmental though.
-delivery_delay,high,21-02-2026,59,1152.0,Friend investment model enjoy window.
-delivery_delay,high,2026-3-10,27,1388.0,Baby lawyer growth matter note happy effort bill off reveal direction.
-quality_issue,critical,2026-3-7,78,1330.0,Able teach activity animal hair turn condition whether along sort.
-delivery_delay,medium,2026-02-25,49,1282.0,Different eat trouble floor step number budget pull apply.
-delivery_delay,critical,2026-01-16,69,1344.0,Source wonder west attention let executive suddenly.
-damaged_goods,high,2026-1-12,47,1237.0,Beat lead hard factor six science drug happy.
-delivery_delay,critical,2026-2-5,2,1394.0,Young simply run national somebody character usually agency must.
-quality_issue,high,2026-01-14T00:00:00,16,1510.0,Week ability price support.
-damaged_goods,high,2026-01-13T00:00:00,68,1283.0,Billion morning draw man art young Republican.
-quality_issue,high,13-01-2026,7,1191.0,Analysis discuss suddenly including time.
-documentation_problem,critical,14-02-2026,69,1136.0,Window be believe card star avoid nothing itself who.
-documentation_problem,medium,2026-2-3,2,1152.0,Factor surface unit hotel story for laugh.
-damaged_goods,low,2026/02/18,73,1261.0,Avoid dark sister once choice clearly letter.
-quality_issue,critical,2026/02/23,59,1488.0,Building group show later leg system bed space.
-damaged_goods,critical,2026-03-06T00:00:00,37,1240.0,Step recent American structure foreign before eat.
-damaged_goods,critical,2026/02/09,12,1096.0,How any federal star community weight take new.
-quality_issue,low,2026-1-11,10,1599.0,Economic left sound cause activity store work candidate statement head.
-damaged_goods,critical,2026-01-08,11,1441.0,Visit base only true avoid young cup position speak begin suggest.
-missing_items,critical,2026-03-07T00:00:00,18,1554.0,Business walk anything under item right many him.
-delivery_delay,medium,2026-01-16,52,1443.0,Common Democrat cost evidence third alone people early far.
-quality_issue,low,2026-03-10T00:00:00,45,1468.0,Third look because him information poor something eat.
-quality_issue,medium,2026-01-22,68,1382.0,Some writer site grow name machine tree maybe home conference.
-damaged_goods,low,18-01-2026,66,1516.0,Others ahead specific exactly speak line group once.
-damaged_goods,low,2026/02/18,22,1261.0,Wind beyond prevent entire staff true argue.
-damaged_goods,critical,2026/01/16,38,1277.0,Offer work home very yard community door.
-documentation_problem,critical,2026-1-28,1,1319.0,South recently trial agreement red way nor none.
-missing_items,critical,2026-03-07,5,1371.0,Student special wife my compare also.
-missing_items ,high,2026/01/01,79,1369.0,Discussion despite money a truth.
-damaged_goods,medium,14-01-2026,1,1370.0,Southern future concern sort than arrive.
-missing_items,critical,2026-1-2,13,1090.0,Only true similar suffer team whether.
-quality_issue ,critical,2026-03-09,66,1508.0,Relate product only from follow wish run join.
-damaged_goods,medium,01-01-2026,20,1411.0,Power company why really up skin development open compare.
-damaged_goods,critical,2026-2-17,39,1558.0,Safe family concern ability reduce of surface.
-missing_items,critical,2026-2-4,14,1149.0,Allow own TV whose determine not view cell seat draw.
-delivery_delay,high,2026-2-15,56,1118.0,Collection those become remember police though land enter.
-delivery_delay,medium,25-01-2026,37,1438.0,Really go skin result answer just information.
-quality_issue,medium,12-02-2026,5,1278.0,This manage her national big look.
-missing_items,critical,2026-1-16,54,1339.0,Prepare reach class available suffer far five weight avoid color.
-missing_items,medium,2026-02-21,65,1115.0,Claim avoid walk within full world throw relate.
-quality_issue,high,2026-01-03T00:00:00,17,1013.0,Wall close threat church big day couple recent reveal.
-damaged_goods,critical,2026-01-31T00:00:00,7,1008.0,Enter example down anyone occur style child guess into far.
-damaged_goods,high,25-02-2026,62,1088.0,Outside current agent color factor bank such final however major produce.
-documentation_problem,medium,2026-02-24T00:00:00,32,1197.0,Politics hold he high cost.
-delivery_delay,high,2026-2-1,36,1447.0,Enjoy let difficult environmental article.
-delivery_delay,medium,2026-1-26,61,1158.0,Beat gas must wife operation.
-quality_issue,critical,2026-01-30,16,1286.0,Article hit mission whole reach view of dog federal house.
-missing_items,low,2026-01-25T00:00:00,19,1210.0,Maybe too song quality per.
-missing_items,critical,2026-01-12T00:00:00,7,1320.0,We last we cold deep cover.
-damaged_goods,critical,30-01-2026,29,1065.0,Interest write itself young physical.
-delivery_delay,high,2026-03-07,55,1281.0,Election treat trial attack hold however for everybody leader them.
-damaged_goods,critical,2026-2-16,36,1334.0,Onto site both change note old who beyond black single size.
-delivery_delay,low,2026-01-07,24,1336.0,They there enough pressure occur list common idea peace race.
- missing_items,high,2026-01-28T00:00:00,37,1108.0,Although threat former down second TV today after.
-damaged_goods,critical,2026/02/25,24,1349.0,Financial successful teach range win direction feel.
-delivery_delay,low,2026-02-08T00:00:00,15,1139.0,Similar fly rock painting become kid tree imagine machine.
-damaged_goods,high,2026-2-12,47,1288.0,Test start middle city find medical career surface these ahead.
-missing_items,low,2026-01-27,75,1139.0,Themselves customer arm almost anything growth.
-documentation_problem,medium,2026-1-16,6,1465.0,Ever statement measure play buy air.
-documentation_problem,high,2026/01/13,10,1494.0,Major land whether listen necessary general study else.
-quality_issue,low,2026-1-26,69,1202.0,Expect hit clear occur who.
-damaged_goods,high,2026/02/23,71,1468.0,Positive question especially important after sister should.
-delivery_delay,critical,16-01-2026,56,1545.0,Listen car community song.
-quality_issue,high,2026-3-6,3,1302.0,Education source figure whom poor interest heavy.
-delivery_delay,medium,06-01-2026,73,1515.0,Learn design few minute perhaps once account yourself.
-delivery_delay,medium,10-03-2026,66,1530.0,No order executive range loss from everybody foot.
-missing_items,critical,2026-02-19T00:00:00,72,1284.0,End represent throughout federal change she tonight.
+missing_items,medium,2026-02-28T00:00:00,51.0,1577,Bad where learn during recently feel stock ball.
+delivery_delay,high,16-01-2026,18.0,1178,Delivery delay detected: 4 day(s) late.
+missing_items,low,2026-3-9,80.0,1387,Statement available win politics last quite general there.
+delivery_delay,critical,2026/02/09,42.0,1055,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026-03-06T00:00:00,45.0,1233,Delivery delay detected: 1 day(s) late.
+missing_items,low,23-02-2026,40.0,1443,Expect attorney cover magazine foreign.
+quality_issue,low,2026-01-14,58.0,1118,Factor surface unit hotel story for laugh.
+delivery_delay,medium,10-01-2026,33.0,1068,Delivery delay detected: 3 day(s) late.
+damaged_goods,critical,08-03-2026,2.0,1003,
+delivery_delay,medium,2026-3-9,58.0,1522,Delivery delay detected: 2 day(s) late.
+documentation_problem,low,26-02-2026,33.0,1530.0,Industry while total spend value return couple city you level these.
+quality_issue,low,2026/03/06,29.0,1463,As second animal summer group me face rate paper example unit.
+documentation_problem,medium,2026/02/11,77.0,1244,This manage her national big look.
+documentation_problem,medium,07-02-2026,56.0,1487,Offer work home very yard community door.
+delivery_delay,medium,2026-2-17,62.0,1290,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-01-22,55.0,1072,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,2026-02-17,7.0,1126,Delivery delay detected: 3 day(s) late.
+delivery_delay,low,10-02-2026,76.0,1001,Delivery delay detected: 1 day(s) late.
+quality_issue,low,2026-02-01T00:00:00,37.0,1492,Write fast less between company always fact soon fine.
+delivery_delay,high,2026-02-19,32.0,1201,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,14-03-2026,78.0,1099,Delivery delay detected: 3 day(s) late.
+documentation_problem,medium,2026/02/27,17.0,1243,First give value somebody event business quality here woman.
+quality_issue,medium,2026-2-20,31.0,1515,Middle blood drop business last cell anything war.
+damaged_goods,high,21-02-2026,33.0,1425,Special boy support possible quality.
+damaged_goods,low,2026-02-04T00:00:00,4.0,1217,Age war measure whom Democrat good anything manager think.
+delivery_delay,high,14-02-2026,34.0,1166,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,22-01-2026,63.0,1000,Delivery delay detected: 3 day(s) late.
+quality_issue,low,22-02-2026,46.0,1481,American evidence enough claim suffer accept letter visit.
+documentation_problem,low,2026-2-1,5.0,1082,Whom politics make collection some college result major true.
+delivery_delay,high,2026/03/03,8.0,1587,
+quality_issue,low,03-01-2026,7.0,1428,Far approach today west manager both matter order.
+quality_issue,critical,02-01-2026,27.0,1367,Single avoid rich toward popular.
+delivery_delay,high,19-01-2026,9.0,1309,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026-02-28T00:00:00,79.0,1430,Particular clearly goal defense.
+documentation_problem,medium,2026-01-02T00:00:00,18.0,1372,Hold be top toward within occur college herself.
+delivery_delay,critical,2026-01-24,29.0,1317,Delivery delay detected: 4 day(s) late.
+documentation_problem,medium,2026-01-28,77.0,1234,Admit attack energy always art.
+quality_issue,medium,2026-1-8,7.0,1256,Above Democrat everything region somebody officer son Mr.
+documentation_problem,medium,2026-1-7,69.0,1398,Seven collection share majority shake because.
+delivery_delay,high,2026/02/09,67.0,1483,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026/02/14,79.0,1595,Delivery delay detected: 5 day(s) late.
+damaged_goods,low,2026/01/08,25.0,1364,
+delivery_delay,high,2026-02-09,73.0,1545,Delivery delay detected: 2 day(s) late.
+documentation_problem,low,2026-2-26,57.0,1173,Husband believe word local very.
+delivery_delay,medium,2026-02-04,62.0,1106,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-1-23,7777.0,1160,Delivery delay detected: 3 day(s) late.
+damaged_goods,low,2026-02-28,10.0,1419,Tree company think compare try.
+quality_issue,low,2026/02/04,12.0,1250,Others full thousand yet garden top grow could way truth.
+delivery_delay,medium,2026-01-16T00:00:00,73.0,1110,Delivery delay detected: 2 day(s) late.
+damaged_goods,medium,2026/02/22,45.0,1231,Rich difference what their mind read peace item risk loss.
+damaged_goods,low,2026-02-28T00:00:00,8.0,1127,Test start middle city find medical career surface these ahead.
+delivery_delay,high,2026-03-06T00:00:00,6.0,1014,Delivery delay detected: 2 day(s) late.
+missing_items,high,2026/01/14,15.0,1283,Heart radio product much president girl condition Mr.
+delivery_delay,high,2026-01-29T00:00:00,20.0,1117,Delivery delay detected: 5 day(s) late.
+quality_issue,low,2026-01-15T00:00:00,74.0,1165,Tree process administration mother in admit reveal movie expert maybe recently.
+delivery_delay,high,2026-1-30,75.0,1101,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,18-02-2026,71.0,1257,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026/03/01,57.0,1311,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026-01-24T00:00:00,32.0,1569,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026/01/19,17.0,1145,Delivery delay detected: 4 day(s) late.
+damaged_goods,medium,2026-2-1,63.0,1162,Send course ground sit tend.
+documentation_problem,medium,2026-3-2,58.0,1268,Break wait center find lay.
+documentation_problem,low,2026-03-10T00:00:00,22.0, ,Five indicate chance heavy senior list support feeling remain south.
+delivery_delay,medium,2026/03/04,32.0,1579,Delivery delay detected: 3 day(s) late.
+quality_issue,low,2026-01-29T00:00:00,60.0,1351.0,Quickly we head several off morning.
+quality_issue,low,2026-01-01,42.0,1053,Although threat former down second TV today after.
+quality_issue,low,28-01-2026,30.0,1298.0,Property remember nearly face feel church remember record.
+delivery_delay,high,2026-01-09,60.0,1351.0,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,2026-01-28,70.0,1270,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026-2-17,26.0,1339,Enter pretty will official dinner anything lose modern return.
+delivery_delay,high,2026/01/20,16.0,1097.0,Delivery delay detected: 4 day(s) late.
+missing_items,low,2026/02/24,15.0,1052,Fire everything whether ago control military trial brother.
+delivery_delay,high,28-01-2026,6.0,1404,Delivery delay detected: 2 day(s) late.
+delivery_delay,critical,04-02-2026,23.0,1426,Delivery delay detected: 5 day(s) late.
+delivery_delay,critical,2026-2-27,22.0,1066,Delivery delay detected: 4 day(s) late.
+quality_issue,high,03-02-2026,64.0,1458,Fear thought whole term possible whatever.
+delivery_delay,high,2026-02-03T00:00:00,5.0,1082,Delivery delay detected: 3 day(s) late.
+delivery_delay,critical,11-01-2026,54.0,1537,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,03-03-2026,36.0,1434,Delivery delay detected: 2 day(s) late.
+delivery_delay,critical,2026-2-2,80.0,1387,Delivery delay detected: 5 day(s) late.
+documentation_problem,low,2026/03/07,1.0,1568,Hour natural be decide scientist rise deep town surface central.
+quality_issue,critical,2026-1-3,14.0,1187,Many debate value former able public trade structure protect chance.
+quality_issue,low,2026-01-15T00:00:00,26.0,1230,Fine bill me fill assume animal way lay.
+quality_issue,high,2026-2-28,18.0,1163,Learn design few minute perhaps once account yourself.
+delivery_delay,high,2026-1-20,13.0,1560,Delivery delay detected: 3 day(s) late.
+quality_issue,low,05-02-2026,17.0,1407,Leave near fact attack better rise maintain former campaign pretty.
+delivery_delay,low,2026-1-4,73.0,1229,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-1-18,67.0,1352,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026-02-20,50.0,1454,Delivery delay detected: 5 day(s) late.
+documentation_problem,low,23-01-2026,60.0,1524,South travel blood benefit chance court money spring environment.
+documentation_problem,low,2026-01-29T00:00:00,59.0,1379,No order executive range loss from everybody foot.
+damaged_goods,low,2026/01/18,45.0,1231,Others ahead specific exactly speak line group once.
+delivery_delay,high,2026-1-17,2.0,1563,Delivery delay detected: 3 day(s) late.
+damaged_goods,critical,12-01-2026,5.0,1337,Each analysis keep music senior.
+delivery_delay,medium,02-03-2026,41.0,1194,Delivery delay detected: 3 day(s) late.
+damaged_goods,low,13-01-2026,57.0,1037,Ability live car difficult quite.
+missing_items,low,2026-1-16,7.0,1141,Goal amount thank good your ever woman way avoid.
+quality_issue,low,2026/02/04,40.0,1114,Statement wonder across protect knowledge toward party perform where radio.
+delivery_delay,low,2026-01-26T00:00:00,56.0,1557,Delivery delay detected: 1 day(s) late.
+documentation_problem,low,2026-01-05,79.0,1303,Carry fly water cut fire who why fact reason make.
+delivery_delay,medium,2026/01/11,56.0,1543,Delivery delay detected: 2 day(s) late.
+missing_items,medium,2026-1-25,22.0,1329,Especially environmental certainly cold every feel.
+missing_items,critical,26-01-2026,36.0,1489,Media pick may indeed reduce bar Mr pattern.
+missing_items,low,2026-01-22T00:00:00,40.0,1094,They there enough pressure occur list common idea peace race.
+delivery_delay,low,2026-1-25,46.0,1204,Delivery delay detected: 1 day(s) late.
+documentation_problem,low,2026-02-10,23.0,1157,Get every visit right both special information she this.
+ delivery_delay,high,04-02-2026,59.0,1379,Delivery delay detected: 4 day(s) late.
+delivery_delay,high,2026-02-02T00:00:00,17.0,1320,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-3-5,57.0,1173,Delivery delay detected: 4 day(s) late.
+delivery_delay,low,2026/02/20,43.0,1395,Delivery delay detected: 1 day(s) late.
+missing_items,medium,2026-01-11,79.0,1430,Discussion if continue policy it ahead pass culture or.
+damaged_goods,critical,2026-1-24,57.0,1199,Bag produce fill owner international.
+delivery_delay,high,2026-01-25,16.0,1097,Delivery delay detected: 4 day(s) late.
+damaged_goods,medium,2026-01-03,29.0,1378,Form bad last he movie stop.
+damaged_goods,low,2026-01-27,20.0,1235,Trial receive region however dream focus executive letter possible.
+documentation_problem,low,2026-02-25T00:00:00,8888.0,1223,Build quite morning including that character yeah garden would.
+quality_issue,critical,2026-1-10,58.0,1080,Positive question especially important after sister should.
+missing_items,low,2026-2-22,52.0,1412,Base bad TV window choice force only.
+delivery_delay,high,2026-03-05,35.0,1496,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026/03/12,1.0,1293,Delivery delay detected: 5 day(s) late.
+quality_issue,low,2026-01-19T00:00:00,8888.0,1224,Not significant manager member of environmental myself yard my.
+damaged_goods,high,2026-1-10,49.0,1002,Camera without strong series without leg rest interest here discover.
+missing_items,high,18-02-2026,22.0,1066,Service kid despite interesting save.
+damaged_goods,high,2026-2-16,74.0,1090,Left southern rich how staff second official and general as.
+missing_items,low,2026-03-04,37.0,1301,Serious another plan public but.
+missing_items,low,2026-01-26T00:00:00,46.0,1315,Realize another high indicate small rate whole.
+delivery_delay,high,2026-01-25T00:00:00,18.0,1163,Delivery delay detected: 5 day(s) late.
+quality_issue,medium,2026-2-4,37.0,1540,Turn both in animal energy fire relate question should.
+missing_items,low,2026-01-16,8.0,1587,Really charge note space when collection finish.
+damaged_goods,low,2026/02/04,76.0,1516,Heart policy side perhaps order.
+delivery_delay,critical,09-03-2026,26.0,,Delivery delay detected: 4 day(s) late.
+documentation_problem,low,2026-01-13,72.0,1259,Audience start treat imagine later identify first hope brother accept.
+damaged_goods,medium,02-03-2026,56.0,1557,Seek reason theory lawyer maintain old than suggest behavior will.
+damaged_goods,low,2026-1-4,56.0,1557,Third look because him information poor something eat.
+documentation_problem,low,2026/01/12,24.0,1076,Hear leg quickly real character young lot far turn.
+delivery_delay,high,17-02-2026,58.0,1597.0,Delivery delay detected: 4 day(s) late.
+quality_issue ,low,2026-02-28,54.0,1041,Leader operation mean white above save network item one.
+delivery_delay,medium,2026-01-19,32.0,1599,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-2-13,30.0,1486,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-2-5,47.0,1174,Delivery delay detected: 3 day(s) late.
+missing_items,medium,2026/01/16,7.0,1451,Box service develop game stop who factor miss reduce.
+delivery_delay,low,26-01-2026,26.0,1349,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026/01/25,44.0,1008.0,Delivery delay detected: 2 day(s) late.
+quality_issue,low,2026-3-5,37.0,1540,Quality phone eat really.
+missing_items,high,2026/02/20,36.0,1434,Social white point three none.
+delivery_delay,critical,2026-2-12,26.0,1230,Delivery delay detected: 5 day(s) late.
+quality_issue,low,2026/02/05,76.0,1502,Wind beyond prevent entire staff true argue.
+delivery_delay,low,02-03-2026,5.0,1226,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,12-01-2026,39.0,1196,Delivery delay detected: 3 day(s) late.
+missing_items,low,2026/02/02,74.0,1380,Both receive around wall city indeed.
+damaged_goods,low,2026-01-07,69.0,1287,Window be believe card star avoid nothing itself who.
+delivery_delay,high,04-03-2026,13.0,1107,Delivery delay detected: 5 day(s) late.
+quality_issue,low,02-03-2026,8888.0,1224,Fear yourself last give stage keep yes.
+delivery_delay,high,2026-02-15T00:00:00,79.0,1430,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026-03-04,17.0,1320,Sit travel reality community spring billion price paper focus thing.
+documentation_problem,low,2026-2-10,76.0,1350,Friend investment model enjoy window.
+damaged_goods,high,05-02-2026,20.0,1122,Event son join hundred keep what fund cost.
+delivery_delay,high,2026-01-30,31.0,1413,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,03-02-2026,27.0,1039,Delivery delay detected: 3 day(s) late.
+missing_items,low,2026-1-15,56.0,1457,Drive attack order land.
+delivery_delay,high,2026-1-8,28.0,1182,Delivery delay detected: 4 day(s) late.
+missing_items,low,09-01-2026,18.0,1286,Spend south now mother others collection.
+missing_items,medium,2026-2-15,26.0,1230,Improve simple turn their save artist.
+documentation_problem,low,2026-01-27,77.0,1095,Thank avoid man drive wife anyone development poor idea.
+quality_issue,low,2026-01-21,5.0,1337,Beat lead hard factor six science drug happy.
+delivery_delay,low,09-02-2026,11.0,1183,Delivery delay detected: 1 day(s) late.
+damaged_goods,medium,2026-02-18T00:00:00,69.0,1282,Similar fly rock painting become kid tree imagine machine.
+delivery_delay,medium,2026-2-5,20.0,1136,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-03-04,59.0,1455,Delivery delay detected: 3 day(s) late.
+missing_items,critical,03-03-2026,26.0,1510,Ever statement measure play buy air.
+quality_issue,low,20-02-2026,28.0,1134,Skill city myself idea glass.
+damaged_goods,medium,2026-2-7,16.0,1239,Believe serve animal system professional.
+documentation_problem,low,2026-01-14,79.0,1303,For leader energy television month police others particularly.
+delivery_delay,medium,2026/01/24,36.0,1169,Delivery delay detected: 1 day(s) late.
+quality_issue,high,2026-03-08,62.0,1480.0,Professional former family wear peace little.
+documentation_problem,high,2026-01-28T00:00:00,39.0,1009,Experience account blue care enough hand idea and anything.
+delivery_delay,medium,2026-01-06T00:00:00,9.0,1280,Delivery delay detected: 3 day(s) late.
+damaged_goods,low,05-02-2026,25.0,1474,Somebody determine allow different eye.
+quality_issue,high,2026/01/29,6.0,1404,Box goal leader common purpose song try opportunity public finish.
+documentation_problem,low,04-03-2026,5.0,1082,How any federal star community weight take new.
+delivery_delay,medium,2026-03-01T00:00:00,68.0,1429,Delivery delay detected: 2 day(s) late.
+damaged_goods,medium,19-01-2026,35.0,1368,Tree serious soon stay seven quite other skin moment month.
+documentation_problem,high,2026/01/07,65.0,1098,Try yeah term camera tend economic represent stock.
+delivery_delay,medium,01-03-2026,11.0,1027,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-02-23T00:00:00,63.0,1548,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026/01/19,18.0,1372,Delivery delay detected: 1 day(s) late.
+missing_items,low,10-02-2026,31.0,1075,Establish paper case store bit responsibility brother box blood cup.
+delivery_delay,high,2026-01-19,41.0,1087,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,12-02-2026,73.0,1376,Delivery delay detected: 1 day(s) late.
+damaged_goods,low,06-02-2026,1.0,1021,Difficult do beyond form line race case who within citizen.
+delivery_delay,high,2026-2-27,22.0,1066,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,2026-01-13,20.0,1272,Delivery delay detected: 3 day(s) late.
+damaged_goods,low,2026/02/15,39.0,1197,Billion morning draw man art young Republican.
+delivery_delay,high,2026-1-27,46.0,1481,Delivery delay detected: 2 day(s) late.
+quality_issue,critical,2026-02-06,62.0,1106,Summer probably feeling military meeting.
+delivery_delay,high,2026-02-01,8.0,1091,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,2026/01/27,27.0,1526,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026-03-07,45.0,1389,Make of group six fish detail contain.
+damaged_goods,medium,2026-3-6,4.0,1497,Buy education reduce day rate act inside big.
+documentation_problem,low,2026-01-18T00:00:00,24.0,1210,Bill test science ten score night down six sometimes.
+damaged_goods,high,12-02-2026,49.0,1147,Our pull fly few century produce determine feel article we.
+quality_issue,medium,2026-01-26T00:00:00,11.0,1494,Happen something entire bar interesting issue yet Congress family.
+delivery_delay,high,2026-01-17,54.0,1045,Delivery delay detected: 4 day(s) late.
+delivery_delay,high,2026-02-14,39.0,1129,Delivery delay detected: 39 day(s) late.
+quality_issue,low,2026/01/07,40.0,1192,Later together knowledge because radio.
+damaged_goods,high,2026/01/31,43.0,1016,Congress best campaign else space several consumer quite friend become.
+documentation_problem,low,15-02-2026,33.0,1488,Family concern radio cost community message.
+damaged_goods,high,2026-03-08T00:00:00,62.0,1266,Common Democrat cost evidence third alone people early far.
+documentation_problem,low,2026-02-23T00:00:00,55.0,1571,Personal interview many win walk provide.
+delivery_delay,low,2026-01-31,71.0,1265,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,01-02-2026,2.0,1185,Delivery delay detected: 3 day(s) late.
+documentation_problem,low,15-02-2026,53.0,1333,Cell year doctor trouble office.
+delivery_delay,medium,06-02-2026,72.0,1259,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,19-02-2026,49.0,1002,Delivery delay detected: 5 day(s) late.
+damaged_goods,medium,2026-2-4,65.0,1098,Bar suddenly population former with wind.
+delivery_delay,medium,2026-02-25,32.0,1004,Delivery delay detected: 3 day(s) late.
+quality_issue,high,2026/02/16,20.0,1122,Some writer site grow name machine tree maybe home conference.
+delivery_delay,medium,2026-02-22T00:00:00,16.0,1239,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,25-01-2026,39.0,1088,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,2026/01/13,76.0,1516,Delivery delay detected: 3 day(s) late.
+damaged_goods,low,19-01-2026,3.0,1499,West source fact explain research get kind either.
+delivery_delay,high,2026-01-28,9.0,1511,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-02-09,74.0,1170,Delivery delay detected: 4 day(s) late.
+documentation_problem,high,2026-02-05T00:00:00,70.0,1566,Bad know of because material firm wonder.
+delivery_delay,medium,2026/01/21,36.0,1341,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-1-18,74.0,1165,Delivery delay detected: 3 day(s) late.
+quality_issue,low,10-02-2026,11.0,1334,Wall close threat church big day couple recent reveal.
+damaged_goods,medium,2026-03-07T00:00:00,56.0,1054,Sort knowledge analysis together court message way cold what Mrs.
+documentation_problem,medium,2026/01/13,1.0,1135,Source wonder west attention let executive suddenly.
+ documentation_problem,high,2026-1-22,42.0,1055,Up federal nor note support quality music himself.
+delivery_delay,high,2026-01-09T00:00:00,37.0,1492,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,2026/01/31,4.0,1397,Delivery delay detected: 3 day(s) late.
+delivery_delay,medium,18-02-2026,71.0,1257,Delivery delay detected: 1 day(s) late.
+documentation_problem,low,2026-01-17,57.0,1354,Standard somebody important material plan.
+missing_items,medium,2026-02-19,37.0,1248,Politics hold he high cost.
+documentation_problem,low,2026/02/08,54.0,1325,Raise chair artist six daughter must grow.
+damaged_goods,medium,2026/01/26,15.0,1083,Official not magazine gas radio any between six least buy.
+missing_items,medium,2026/01/20,46.0,1315,She within position inside year him.
+delivery_delay,medium,2026/02/08,6.0,1370,Delivery delay detected: 2 day(s) late.
+damaged_goods,low,2026-02-04,24.0,1575,Health would newspaper hand certain own husband American.
+delivery_delay,medium,19-01-2026,7.0,1215,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-02-05,12.0,1342,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026-1-23,10.0,1175,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-02-16T00:00:00,24.0,1159,Delivery delay detected: 1 day(s) late.
+missing_items,low,2026/03/04,55.0,1112,Education source figure whom poor interest heavy.
+delivery_delay,high,19-01-2026,31.0,1469,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,2026-02-14,39.0,1129,Delivery delay detected: 39 day(s) late.
+documentation_problem,medium,2026-01-13,9.0,1511,Step recent American structure foreign before eat.
+quality_issue,medium,2026-2-4,51.0,,Decide scene ready technology particular into pattern.
+delivery_delay,low,2026-2-12,32.0,1589,Delivery delay detected: 1 day(s) late.
+quality_issue,low,2026-1-29,79.0,1093,None whose newspaper care drug.
+documentation_problem,medium,2026/01/04,35.0,1496,Development the inside thought he one less brother.
+documentation_problem,medium,2026/02/10,31.0,1514,We last we cold deep cover.
+delivery_delay,low,2026-01-30,2.0,1003,Delivery delay detected: 1 day(s) late.
+documentation_problem,low,2026-1-25,31.0,1075,Local current white fly position traditional become off movement.
+delivery_delay,high,2026/02/10,4.0,1142,Delivery delay detected: 5 day(s) late.
+documentation_problem,medium,11-01-2026,37.0,1190,Main Mr try us community cold.
+delivery_delay,high,2026-2-2,17.0,1576,Delivery delay detected: 5 day(s) late.
+documentation_problem,critical,2026/02/07,13.0,1107,Determine strong create consider son system.
+delivery_delay,high,2026/01/07,42.0,1171,Delivery delay detected: 5 day(s) late.
+missing_items,low,2026-01-07T00:00:00,59.0,1318.0,Financial successful teach range win direction feel.
+delivery_delay,high,2026-3-7,34.0,1520,Delivery delay detected: 3 day(s) late.
+delivery_delay,low,2026-03-06,1.0,1568,
+quality_issue,medium,2026-2-6,6.0,1300,Product president after ready indicate.
+documentation_problem,low,2026-02-23,15.0,1253,Break partner area program price compare actually case activity.
+delivery_delay,high,2026/03/09,31.0,1113,Delivery delay detected: 3 day(s) late.
+quality_issue,low,2026-2-19,12.0,1250,Education child institution help last our old.
+quality_issue,low,2026-02-15T00:00:00,9.0,1594,Sure somebody huge why station manager follow exist.
+delivery_delay,high,2026-1-14,19.0,1527,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,25-02-2026,24.0,1410,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026-2-16,30.0,1030,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,2026-02-16,45.0,1231,Delivery delay detected: 2 day(s) late.
+damaged_goods,high,2026-2-15,20.0,1581,Expect hit clear occur who.
+delivery_delay,medium,2026-1-31,14.0,1406,Delivery delay detected: 3 day(s) late.
+missing_items,low,2026-01-02T00:00:00,4.0,1026,Well mission situation result cold camera sit environmental though.
+ delivery_delay,high,05-01-2026,10.0,,
+damaged_goods,medium,2026-02-22T00:00:00,45.0,1466,Themselves customer arm almost anything growth.
+missing_items,low,04-01-2026,20.0,1122,Safe family concern ability reduce of surface.
+quality_issue,high,09-02-2026,54.0,1523,Case similar send card year central most.
+missing_items,high,2026/01/24,51.0,1264,Soldier meeting building cut catch so.
+missing_items,low,2026/01/14,9.0,1399,Only true similar suffer team whether.
+delivery_delay,medium,2026-3-4,22.0,1195,Delivery delay detected: 3 day(s) late.
+missing_items,high,06-03-2026,43.0,1062,Thousand activity guess first hit stuff inside national common likely.
+documentation_problem,critical,2026-03-05,40.0,1047,Enter example down anyone occur style child guess into far.
+documentation_problem,low,2026/03/05,12.0,1031,Chance step throughout party activity various measure light.
+damaged_goods,medium,2026-03-07,58.0,1213,End represent throughout federal change she tonight.
+quality_issue,low,2026/03/03,56.0,1046,News mention billion bed never others six tell activity.
+quality_issue,high,2026-1-18,69.0,1282,Cause use five hotel pattern successful order medical meeting majority.
+delivery_delay,medium,2026/02/12,29.0,1463,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026/03/06,34.0,1296,Financial join well draw each.
+missing_items,medium,24-01-2026,37.0,1490,Wrong whatever model stuff avoid stand any according case piece.
+quality_issue,medium,02-02-2026,43.0,1016,Million night your long heavy what.
+documentation_problem,low,2026-2-2,38.0,1574,Treatment garden great sign return poor really particular court.
+quality_issue,high,2026/02/28,31.0,1514,Interest write itself young physical.
+delivery_delay ,critical,2026-1-15,15.0,1083,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,2026/02/23,28.0,1355,Delivery delay detected: 2 day(s) late.
+damaged_goods,low,2026-1-19,49.0,1022,Network never but above.
+ delivery_delay,medium,04-03-2026,53.0,1333,Delivery delay detected: 1 day(s) late.
+quality_issue,low,2026-01-09T00:00:00,31.0,1469,Relate product only from follow wish run join.
+delivery_delay,high,2026-01-07,6.0,1035,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,05-02-2026,17.0,1320,Delivery delay detected: 2 day(s) late.
+quality_issue,medium,2026-02-17,72.0,1154,Collection those become remember police though land enter.
+delivery_delay,high,2026-01-17,10.0,1119,Delivery delay detected: 3 day(s) late.
+delivery_delay,low,2026-3-9,27.0,1549,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-3-17,72.0,1535,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,2026-2-5,20.0,1136,Delivery delay detected: 2 day(s) late.
+damaged_goods,low,2026-01-19,6.0,1295,Avoid dark sister once choice clearly letter.
+damaged_goods,medium,2026-1-20,48.0,1092,Federal reduce team Republican very plan cut person fact generation.
+delivery_delay,medium,2026-02-06T00:00:00,65.0,1449,Delivery delay detected: 1 day(s) late.
+damaged_goods,low,2026-02-21T00:00:00,58.0,1059,Try discover top realize note even under range exactly myself.
+delivery_delay,critical,2026/02/26,25.0,1228,
+quality_issue,low,2026-2-5,43.0,1138,Fine responsibility safe team wish candidate.
+delivery_delay,high,2026-02-10,27.0,1367,Delivery delay detected: 5 day(s) late.
+documentation_problem,high,2026-1-14,5.0,1337,Onto site both change note old who beyond black single size.
+missing_items,low,2026-1-7,39.0,1396,Door population gun we allow.
+missing_items,low,2026-01-16T00:00:00,62.0, ,Outside current agent color factor bank such final however major produce.
+documentation_problem,medium,2026-02-05,34.0,1331,Maybe too song quality per.
+delivery_delay,critical,2026-1-19,58.0,1080,Delivery delay detected: 4 day(s) late.
+damaged_goods ,high,2026-02-09,77.0,1006,Structure day stock these scientist itself stage authority rather.
+delivery_delay,high,2026/01/21,36.0,1596,Delivery delay detected: 5 day(s) late.
+damaged_goods,low,24-02-2026,63.0,1552,Various attorney value all important.
+delivery_delay,medium,2026-01-10,76.0,1502,Delivery delay detected: 3 day(s) late.
+damaged_goods,high,05-01-2026,38.0,1493,Set no old wall report.
+delivery_delay,medium,2026-1-12,58.0,1059,Delivery delay detected: 3 day(s) late.
+missing_items,critical,04-03-2026,80.0,1366.0,Consumer husband while even history surface son power.
+damaged_goods,medium,2026-01-20,49.0,1359,Card good full poor store range wonder long.
+damaged_goods,medium,2026-1-16,39.0,1042,Generation wait thus suffer economy play nearly.
+delivery_delay,high,2026-3-6,51.0,1383,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026/02/13,1.0,1310,Delivery delay detected: 4 day(s) late.
+damaged_goods,medium,2026/02/05,80.0,1366.0,Region Democrat partner really your customer career.
+quality_issue,critical,2026-02-04T00:00:00,8.0,1091,First blood accept final growth especially car cost.
+quality_issue,low,2026-1-25,38.0,1574,Beat peace something require bank child Republican plant.
+missing_items ,critical,2026-02-24,38.0,1544,Turn pattern kind describe to cause.
+delivery_delay,high,2026-01-03,20.0,1437,Delivery delay detected: 4 day(s) late.
+delivery_delay,low,2026-02-21T00:00:00,12.0,1358,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026-01-28,66.0,1541,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,2026-1-28,74.0,1236,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-02-03,77.0,1427,Delivery delay detected: 4 day(s) late.
+delivery_delay,critical,2026/01/19,43.0,1062,Delivery delay detected: 4 day(s) late.
+delivery_delay,high,2026/03/06,34.0,1225,Delivery delay detected: 5 day(s) late.
+missing_items,low,2026/02/27,62.0,1106,Person pass behavior political option oil.
+missing_items,low,13-01-2026,13.0,1107,Forget thus western environmental run head.
+documentation_problem,medium,2026-3-6,17.0,1320,Behavior here need argue act.
+damaged_goods,high,2026/03/05,18.0,1103,Media turn reality myself so growth time Mr point be.
+documentation_problem,low,10-01-2026,33.0,1488,Conference sure administration debate certain.
+delivery_delay,high,2026-1-7,25.0,1128,Delivery delay detected: 4 day(s) late.
+damaged_goods,low,2026-01-21,30.0,1030,Often individual charge form here street material pressure range either.
+quality_issue,low,2026-2-13,52.0,1362,Business walk anything under item right many him.
+delivery_delay,high,2026/01/28,79.0,1484,Delivery delay detected: 5 day(s) late.
+missing_items,medium,2026-02-01T00:00:00,58.0,1059,End dog send west.
+quality_issue,medium,2026-01-02,50.0,1188,Visit base only true avoid young cup position speak begin suggest.
+delivery_delay,medium,17-02-2026,58.0,1346,Delivery delay detected: 3 day(s) late.
+delivery_delay,medium,2026-02-09,55.0,1271,Delivery delay detected: 2 day(s) late.
+quality_issue,medium,07-01-2026,31.0,1113,Have including none determine certainly end.
+documentation_problem,low,2026-02-13T00:00:00,8.0,1091,So nothing serious compare task today still middle.
+quality_issue,low,2026-03-10,27.0,1549,Beat gas must wife operation.
+delivery_delay,low,2026-02-09,57.0,1375,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-02-09T00:00:00,68.0,1050,Delivery delay detected: 4 day(s) late.
+delivery_delay,low,2026-03-04,33.0,1340,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-01-17T00:00:00,40.0,1192,Delivery delay detected: 1 day(s) late.
+missing_items,high,2026-2-25,22.0,1066,Wonder practice when mean reason follow.
+damaged_goods,low,2026-1-22,37.0,1393,Account gas building team.
+missing_items,low,2026-1-12,57.0,1519,Price great positive and worker quality hundred.
+delivery_delay,high,2026/03/11,48.0,1078,Delivery delay detected: 5 day(s) late.
+missing_items,low,21-01-2026,67.0,1564,Easy over return expect wait.
+delivery_delay,medium,2026-01-10,63.0,1276,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,2026/02/16,30.0,1012,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026-2-18,15.0,1052,Delivery delay detected: 5 day(s) late.
+damaged_goods,low,2026/03/10,53.0,1249,Case four listen lead paper.
+missing_items,low,2026-01-17T00:00:00,58.0,1346,Assume huge response long improve.
+delivery_delay,medium,2026-02-21,45.0,1503,Delivery delay detected: 3 day(s) late.
+missing_items,medium,2026/02/27,46.0,1440,Southern future concern sort than arrive.
+damaged_goods,low,2026/03/05,17.0,1145,Phone decision picture defense.
+documentation_problem,low,2026-1-24,68.0,1186,Degree still even no even body scientist dream anything.
+delivery_delay,low,2026-2-23,6.0,1096,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,11-02-2026,58.0,1258,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-02-15,51.0,1264,Delivery delay detected: 5 day(s) late.
+quality_issue,low,2026-01-14,9.0,1156,Staff gas require rather point little wait grow feel color.
+delivery_delay,critical,2026-3-19,33.0,1530.0,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,2026-02-24,52.0,1412,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,2026-1-26,7777.0,1207,Delivery delay detected: 3 day(s) late.
+delivery_delay,critical,21-01-2026,11.0,1422,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-02-02,17.0,1447,Delivery delay detected: 2 day(s) late.
+quality_issue,low,2026-1-15,32.0,1512,Back nor article natural measure of change foreign.
+delivery_delay,high,2026-1-14,28.0,1124,Delivery delay detected: 2 day(s) late.
+delivery_delay,critical,2026-03-10T00:00:00,65.0,1531,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-03-03T00:00:00,49.0,1120,Delivery delay detected: 4 day(s) late.
+delivery_delay,medium,2026-1-27,49.0,1147,Delivery delay detected: 2 day(s) late.
+quality_issue,low,14-02-2026,72.0,1381,Indicate police marriage phone face what lot source rate father.
+delivery_delay,low,2026-01-07T00:00:00,18.0,1521,Delivery delay detected: 1 day(s) late.
+missing_items,low,02-02-2026,23.0,1426,Power company why really up skin development open compare.
+quality_issue,high,2026-03-03T00:00:00,58.0,1346,High someone box either rich agency might side.
+delivery_delay,medium,2026-03-08T00:00:00,28.0,1134,Delivery delay detected: 3 day(s) late.
+quality_issue,low,2026-01-13T00:00:00,58.0,1346,Guess want result many pattern.
+delivery_delay,high,2026-2-4,71.0,1456,Delivery delay detected: 4 day(s) late.
+documentation_problem,low,2026/03/05,34.0,1331,City usually ever pressure economy head tough.
+delivery_delay,high,2026-01-28T00:00:00,70.0,1470,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026-01-18T00:00:00,63.0,1548,Treatment relate positive sense national owner simply.
+delivery_delay,high,2026/01/22,51.0,1593,Delivery delay detected: 5 day(s) late.
+damaged_goods,high,2026-03-08T00:00:00,62.0,1266,Common Democrat cost evidence third alone people early far.
+delivery_delay ,high,2026/02/25,67.0,1018,Delivery delay detected: 5 day(s) late.
+missing_items,low,2026/01/26,49.0,1418,Cell fire late approach grow act carry.
+quality_issue,low,2026/01/14,11.0,1070,Situation late direction need heart control one.
+damaged_goods,low,2026-02-12T00:00:00,37.0,1028,Stuff future shoulder western however similar ahead.
+missing_items,medium,2026-1-12,56.0,1149.0,Child follow anything usually past.
+quality_issue,high,2026-01-16T00:00:00,1.0,1021,Old of end growth door property let.
+quality_issue,low,2026-1-29,53.0,1421,Affect difference world deep against mean but represent.
+delivery_delay,low,2026-02-24,24.0,1210,Delivery delay detected: 1 day(s) late.
+documentation_problem,medium,2026-2-21,69.0,1332,Different eat trouble floor step number budget pull apply.
+quality_issue,high,2026/01/02,8888.0,1386,Local director become south billion happen.
+delivery_delay,critical,30-01-2026,37.0,1028,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026-3-5,6.0,1060,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026-02-12,1.0,1021,Delivery delay detected: 5 day(s) late.
+delivery_delay,critical,05-01-2026,7.0,1256,Delivery delay detected: 5 day(s) late.
+damaged_goods,low,2026-01-23T00:00:00,60.0,1478,Operation himself white fire cause everybody.
+ delivery_delay,high,2026/01/17,49.0,1359,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,22-02-2026,23.0,1590,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-2-27,54.0,1523,Delivery delay detected: 4 day(s) late.
+delivery_delay,high,10-03-2026,59.0,1420,Delivery delay detected: 5 day(s) late.
+documentation_problem,high,2026-2-28,14.0,1153,Right next look thank four whatever address view while bring.
+delivery_delay,high,2026/02/24,43.0,1252,Delivery delay detected: 2 day(s) late.
+quality_issue,low,03-03-2026,67.0,1302,Though firm financial huge spring list.
+delivery_delay,high,2026-1-30,19.0,1386,Delivery delay detected: 4 day(s) late.
+documentation_problem,medium,09-02-2026,10.0,1175,Discussion despite money a truth.
+delivery_delay,high,2026-3-7,61.0,1108,Delivery delay detected: 2 day(s) late.
+delivery_delay,medium,2026-2-15,40.0,1047,Delivery delay detected: 1 day(s) late.
+missing_items,high,2026/02/16,34.0,1533,Upon scientist might necessary former interview.
+delivery_delay,low,05-01-2026,8888.0,1313,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,21-01-2026,7.0,1141,Delivery delay detected: 1 day(s) late.
+delivery_delay,low,2026-2-16,79.0,1592,Delivery delay detected: 1 day(s) late.
+quality_issue,low,2026-1-9,45.0,1503,Read citizen indeed less future.
+delivery_delay,critical,24-01-2026,4.0,1081,Delivery delay detected: 5 day(s) late.
+documentation_problem,low,01-01-2026,20.0,1235,Happen determine whatever long lawyer writer health.
+documentation_problem,medium,2026-03-04,8888.0,1223,White measure manager range indeed style major bar.
+quality_issue,low,2026/01/06,7.0,1141,Expect writer myself management voice surface life cover.
+delivery_delay,high,2026-3-5,24.0,1509,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-1-26,31.0,1075,Delivery delay detected: 3 day(s) late.
+delivery_delay,low,2026-03-05T00:00:00,49.0,1418,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026/03/08,57.0,1037,Delivery delay detected: 3 day(s) late.
+documentation_problem,high,2026-2-24,39.0,1137,Able teach activity animal hair turn condition whether along sort.
+quality_issue,low,2026-1-14,14.0,1029,Election treat trial attack hold however for everybody leader them.
+damaged_goods,high,2026/02/10,70.0,1470,Economic left sound cause activity store work candidate statement head.
+damaged_goods,high,2026-1-12,17.0,1243,Site for exactly skill half usually customer young conference should.
+missing_items,low,2026-02-12,56.0,1054,Century television Congress ball forward would finish around later.
+damaged_goods,low,2026/03/09,55.0,1271,Crime network available mean share evidence writer quite budget window.
+documentation_problem,medium,2026-02-20,4.0,1203,Baby lawyer growth matter note happy effort bill off reveal direction.
+delivery_delay,critical,27-01-2026,24.0,1076,Delivery delay detected: 5 day(s) late.
+delivery_delay,low,2026/02/14,79.0,1592,Delivery delay detected: 1 day(s) late.
+damaged_goods,critical,2026/01/20,38.0,1544,Particularly could us hotel lead sit response.
+delivery_delay,medium,04-01-2026,47.0,1064,Delivery delay detected: 2 day(s) late.
+quality_issue,critical,2026/02/24,75.0,1415,Experience suggest space mission agent certainly prove customer seek claim.
+quality_issue,low,2026/02/22,67.0,1352,Religious across media health pay.
+documentation_problem,low,08-02-2026,47.0,1174,Majority officer environmental increase later plant they behavior.
+delivery_delay,critical,2026-02-18T00:00:00,69.0,1398,Delivery delay detected: 4 day(s) late.
+documentation_problem,medium,2026-03-01,33.0,1488,Figure consumer really memory industry case himself.
+damaged_goods,low,11-01-2026,79.0,1595,Week ability price support.
+missing_items,low,2026-01-17T00:00:00,49.0,1202,Ball we side enough decision.
+delivery_delay,medium,07-03-2026,34.0,1219,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-02-14,47.0,1148.0,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,13-01-2026,43.0,,Delivery delay detected: 4 day(s) late.
+documentation_problem,low,2026-2-10,6.0,1014,Kid a when dark read car.
+documentation_problem,low,2026-01-01,46.0,1481,Enjoy let difficult environmental article.
+delivery_delay,medium,09-02-2026,9999.0,1405,Delivery delay detected: 3 day(s) late.
+delivery_delay,medium,2026-02-03T00:00:00,4.0,1217,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-3-7,6.0,1300,Delivery delay detected: 5 day(s) late.
+ delivery_delay,high,18-02-2026,32.0,1512,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026-01-24,60.0,1409,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-1-30,35.0,1032,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,18-02-2026,12.0,1031,Delivery delay detected: 4 day(s) late.
+documentation_problem,medium,2026/01/19,37.0,1393,End mention market better wonder light style.
+delivery_delay,medium,2026/01/02,67.0,1302,Delivery delay detected: 1 day(s) late.
+missing_items ,low,2026-01-29,65.0,1098,Major land whether listen necessary general study else.
+delivery_delay,critical,2026-02-09T00:00:00,9999.0,1585,Delivery delay detected: 4 day(s) late.
+documentation_problem,low,2026-2-11,29.0,1281,Everything fear walk word side relate real.
+delivery_delay,medium,2026-01-26,40.0,1114,Delivery delay detected: 2 day(s) late.
+documentation_problem,high,2026/03/02,75.0,1101,Article hit mission whole reach view of dog federal house.
+documentation_problem,medium,20-01-2026,19.0,1024,Blood fight we forward per sound forget friend spring.
+damaged_goods,medium,2026-03-02,8888.0,1212,Probably result painting successful nor stay.
+delivery_delay,high,2026-02-17,6.0,1061,Delivery delay detected: 5 day(s) late.
+missing_items,low,2026-01-14,21.0,1294,Kind quite response major together knowledge argue car indeed nor.
+delivery_delay,critical,2026/02/21,66.0,1077,Delivery delay detected: 5 day(s) late.
+delivery_delay,medium,2026-01-28,27.0,1373,Delivery delay detected: 1 day(s) late.
+delivery_delay,critical,2026-2-27,22.0,1066,Delivery delay detected: 4 day(s) late.
+documentation_problem,medium,2026-2-7,73.0,1110,If maybe time region financial brother.
+missing_items,low,2026-02-05T00:00:00,46.0,1440,Identify floor cause agent market fast trade identify say on.
+damaged_goods,low,2026-01-19,42.0,1444,Guy song quickly well central parent sit alone.
+missing_items,high,2026-3-7,39.0,1416,South recently trial agreement red way nor none.
+delivery_delay,medium,2026-01-13T00:00:00,71.0,1269,Delivery delay detected: 2 day(s) late.
+quality_issue,low,2026-02-22,2.0,1307,Challenge quite all way body affect finish charge.
+quality_issue,low,2026-02-08T00:00:00,10.0,1119,Guess occur level work candidate.
+delivery_delay,critical,2026/02/21,66.0,1077,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,22-01-2026,69.0,1343,Delivery delay detected: 5 day(s) late.
+missing_items,low,2026-01-07T00:00:00,75.0,1263,Woman trouble several event white wife laugh card include.
+documentation_problem,medium,2026/01/19,40.0,1013,Sing story win group important civil.
+damaged_goods,medium,10-02-2026,71.0,1011,Really go skin result answer just information.
+quality_issue,low,2026-01-09T00:00:00,63.0,1000,Learn forward beautiful approach some.
+delivery_delay,high,2026-01-25T00:00:00,7.0,1428,Delivery delay detected: 4 day(s) late.
+documentation_problem ,low,2026-03-01,39.0,1567,Actually edge per sit thank.
+delivery_delay,high,2026-02-04,19.0,1476,Delivery delay detected: 5 day(s) late.
+delivery_delay,critical,2026-02-15,30.0,1279,Delivery delay detected: 4 day(s) late.
+damaged_goods,high,10-01-2026,31.0,1515,Building group show later leg system bed space.
+documentation_problem,low,2026-1-2,39.0,1227,Listen car community song.
+delivery_delay,high,2026-02-20T00:00:00,49.0,1344,Delivery delay detected: 2 day(s) late.
+quality_issue,high,2026/02/03,7.0,1126,Term on want author threat.
+documentation_problem,high,2026/01/25,56.0,1557,Analysis discuss suddenly including time.
+delivery_delay,low,04-01-2026,50.0,1242,Delivery delay detected: 1 day(s) late.
+delivery_delay,medium,2026-3-8,49.0,1022,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026-01-07T00:00:00,41.0,1400,Delivery delay detected: 4 day(s) late.
+damaged_goods,high,2026-02-19T00:00:00,79.0,1093,Policy consider whom item treat area buy check clearly follow.
+quality_issue,medium,2026-01-19,40.0,1013,Former room possible responsibility add.
+delivery_delay,high,2026-2-27,20.0,1058,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,2026/02/20,67.0,1564,Delivery delay detected: 4 day(s) late.
+missing_items,medium,2026-01-25T00:00:00,39.0,1042,Wear guy approach development lawyer nice people list price.
+delivery_delay,medium,2026-2-27,18.0,1261,Delivery delay detected: 2 day(s) late.
+delivery_delay,critical,2026-01-13,34.0,1218,Delivery delay detected: 4 day(s) late.
+quality_issue,low,2026-01-13,37.0,1393,Small control see the face also fear owner.
+delivery_delay,high,2026/03/07,34.0,1288,Delivery delay detected: 3 day(s) late.
+delivery_delay,medium,2026-01-24,36.0,1168,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-02-02T00:00:00,72.0,1154,Delivery delay detected: 3 day(s) late.
+missing_items,low,2026-2-23,39.0,1546,Eye environment teach world quickly believe while.
+quality_issue,critical,2026-01-26T00:00:00,1.0,1293,Student special wife my compare also.
+documentation_problem,high,10-01-2026,58.0,1597.0,Claim avoid walk within full world throw relate.
+delivery_delay,high,2026-01-23,49.0,1143,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026/01/18,20.0,1328,Delivery delay detected: 2 day(s) late.
+missing_items,low,2026/02/07,42.0,1171,Whole involve action else member million oil offer.
+missing_items,critical,06-03-2026,54.0,1537,Well left remain just fact.
+damaged_goods ,low,15-01-2026,44.0,1008.0,To manage state score important.
+missing_items,low,2026-02-07T00:00:00,57.0,1199,Its investment investment local above move room wear throughout series most.
+delivery_delay,high,2026-2-14,9.0,1504,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,2026/01/09,59.0,1459,Delivery delay detected: 5 day(s) late.
+missing_items,high,2026/01/23,27.0,1277,Bill include news a.
+delivery_delay,low,2026-01-14T00:00:00,54.0,1448,Delivery delay detected: 1 day(s) late.
+missing_items,low,2026-02-04T00:00:00,47.0,1116,So ready bad seat generation best.
+delivery_delay,high,2026-1-31,23.0,1157,Delivery delay detected: 4 day(s) late.
+damaged_goods,medium,2026-02-25,71.0,1011,Young simply run national somebody character usually agency must.
+missing_items,low,2026/01/16,79.0,1592,Miss give best reveal laugh attack.
+delivery_delay,high,2026-02-08T00:00:00,71.0,1007,Delivery delay detected: 5 day(s) late.
+delivery_delay ,medium,2026-2-27,11.0,1334,Delivery delay detected: 2 day(s) late.
+delivery_delay,high,2026-02-07T00:00:00,12.0,1069,Delivery delay detected: 3 day(s) late.
+delivery_delay,high,24-01-2026,11.0,1494,Delivery delay detected: 4 day(s) late.
+delivery_delay,low,2026/02/19,1.0,1206,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,18-02-2026,56.0,1054,Delivery delay detected: 38 day(s) late.
+delivery_delay,medium,2026-2-7,77.0,1179,Delivery delay detected: 2 day(s) late.
+delivery_delay,medium,2026/01/29,7.0,1468,Delivery delay detected: 2 day(s) late.
+damaged_goods,critical,2026-02-21T00:00:00,9.0,1504,House produce listen mouth carry hospital something nation.
+damaged_goods,low,2026/01/24,27.0,1373,Allow own TV whose determine not view cell seat draw.
+delivery_delay,medium,2026-03-07T00:00:00,64.0,1394,Delivery delay detected: 1 day(s) late.
+delivery_delay,high,2026/01/07,33.0,1488,Delivery delay detected: 2 day(s) late.
+delivery_delay,critical,2026-1-11,69.0,1547,Delivery delay detected: 4 day(s) late.
+missing_items,low,2026-01-27T00:00:00,72.0,1556,Feel staff happy purpose woman on someone rise read ago.
+missing_items,low,2026-01-28T00:00:00,63.0,1548,Prepare reach class available suffer far five weight avoid color.
+documentation_problem,medium,2026-02-12,37.0,1539,Lot notice just particularly single particularly television they road through.
+quality_issue,critical,13-02-2026,17.0,1447,Specific as simply leader fall analysis.
+delivery_delay,high,2026-2-25,62.0,1480.0,Delivery delay detected: 5 day(s) late.
+delivery_delay,high,28-01-2026,47.0,1485,Delivery delay detected: 3 day(s) late.
