@@ -1,301 +1,372 @@
+import json
+import random
+import re
+from datetime import datetime, timedelta
+
 import numpy as np
 import pandas as pd
 from faker import Faker
 
-# =========================
+# =========================================================
 # CONFIG
-# =========================
+# =========================================================
 SEED = 42
+random.seed(SEED)
 np.random.seed(SEED)
 
-fake = Faker("fr_FR")
+fake = Faker()
 fake.seed_instance(SEED)
 
 N_SUPPLIERS = 80
-N_ORDERS = 25000
-START_DATE = "2024-01-01"
-END_DATE = "2025-12-31"
+N_ORDERS = 600
+N_INCIDENTS = 220
 
-CATEGORIES = ["alimentaire", "non_alimentaire", "logistique"]
-INCIDENT_TYPES = ["retard_livraison", "defaut_qualite", "probleme_logistique"]
-SEVERITIES = ["faible", "moyen", "critique"]
+START_DATE = datetime(2025, 1, 1)
+END_DATE = datetime(2026, 3, 10)
 
-# Data quality for Silver layer
-MISSING_RATE = 0.02
-DUPLICATE_RATE = 0.008
-OUTLIER_RATE = 0.003
+OUTPUT_ORDERS_JSON = "orders.json"
+OUTPUT_SUPPLIERS_PARQUET = "suppliers.parquet"
+OUTPUT_INCIDENTS_CSV = "incidents.csv"
 
-# Saisonnalité (poids par mois)
-MONTH_WEIGHTS = {
-    1: 0.90, 2: 0.85, 3: 0.95, 4: 0.95,
-    5: 1.00, 6: 1.10, 7: 1.15, 8: 1.10,
-    9: 1.00, 10: 1.05, 11: 1.20, 12: 1.25
-}
-
-# Choc de marché (ex: hausse prix non alimentaire en 2025-03 et 2025-04)
-SHOCK_CATEGORY = "non_alimentaire"
-SHOCK_START = "2025-03-01"
-SHOCK_END = "2025-04-30"
-SHOCK_MULTIPLIER = 1.18  # +18% pendant le choc
-
-# =========================
-# HELPERS
-# =========================
-def clip(a, lo, hi):
-    return np.minimum(np.maximum(a, lo), hi)
-
-def make_date_pool(start, end):
-    return pd.date_range(start=start, end=end, freq="D")
-
-def seasonal_sample_dates(n, start, end):
-    """Échantillonne des dates avec saisonnalité via poids mensuels."""
-    dates = make_date_pool(start, end)
-    months = dates.month.values
-    w = np.array([MONTH_WEIGHTS[m] for m in months], dtype=float)
-    w = w / w.sum()
-    sampled = np.random.choice(dates, size=n, replace=True, p=w)
-    return pd.to_datetime(sampled)
-
-def logistic_skew_supplier_probs(suppliers, heavy_share=0.35, heavy_frac=0.15):
-    """
-    Crée une distribution où une minorité de fournisseurs reçoit une grosse part des commandes.
-    heavy_frac des fournisseurs reçoivent heavy_share des commandes.
-    """
-    n = len(suppliers)
-    heavy_n = max(1, int(n * heavy_frac))
-    heavy_suppliers = np.random.choice(suppliers, size=heavy_n, replace=False)
-
-    probs = np.zeros(n, dtype=float)
-    idx = {s: i for i, s in enumerate(suppliers)}
-
-    heavy_p = heavy_share / heavy_n
-    rest_share = 1.0 - heavy_share
-    rest_n = n - heavy_n
-    rest_p = rest_share / max(1, rest_n)
-
-    for s in suppliers:
-        probs[idx[s]] = heavy_p if s in heavy_suppliers else rest_p
-
-    probs = probs * np.random.uniform(0.95, 1.05, size=n)
-    probs = probs / probs.sum()
-    return probs, set(heavy_suppliers)
-
-def normalize_company(name: str) -> str:
-    if len(name) < 10 or " " not in name:
-        suffix = np.random.choice(["Distribution", "Logistics", "Trading", "Supply", "Services"])
-        return f"{name} {suffix}"
-    return name
-
-def make_unique_company_names(n, fake_obj):
-    names = set()
-    while len(names) < n:
-        names.add(normalize_company(fake_obj.company()))
-    return list(names)
-# =========================
-# 1) SUPPLIERS + RISK PROFILE
-# =========================
-# Bronze-friendly: une seule colonne 'fournisseur' avec des noms réalistes
-suppliers = make_unique_company_names(N_SUPPLIERS, fake)
-
-# Profil risque (0 bon, 1 moyen, 2 risqué)
-risk_profile = np.random.choice([0, 1, 2], size=N_SUPPLIERS, p=[0.60, 0.25, 0.15])
-supplier_risk = dict(zip(suppliers, risk_profile))
-
-# Volatilité prix et propension au retard
-supplier_price_vol = {
-    s: (0.03 if supplier_risk[s] == 0 else 0.08 if supplier_risk[s] == 1 else 0.18)
-    for s in suppliers
-}
-supplier_delay_lambda = {
-    s: (0.4 if supplier_risk[s] == 0 else 1.2 if supplier_risk[s] == 1 else 2.8)
-    for s in suppliers
-}
-
-# DÉPENDANCE FOURNISSEUR: distribution skewed
-supplier_probs, heavy_suppliers = logistic_skew_supplier_probs(
-    suppliers, heavy_share=0.35, heavy_frac=0.15
-)
-
-# =========================
-# 2) ORDERS DATA (ERP)
-# =========================
-df_orders = pd.DataFrame({
-    "fournisseur": np.random.choice(suppliers, size=N_ORDERS, p=supplier_probs),
-    "date_commande": seasonal_sample_dates(N_ORDERS, START_DATE, END_DATE),
-    "categorie_produit": np.random.choice(CATEGORIES, size=N_ORDERS, p=[0.45, 0.40, 0.15])
-})
-
-# délais prévus selon catégorie
-base_delai_prevu = {
-    "alimentaire": (2, 10),
-    "non_alimentaire": (5, 20),
-    "logistique": (3, 15),
-}
-df_orders["delai_prevu"] = [
-    np.random.randint(base_delai_prevu[cat][0], base_delai_prevu[cat][1] + 1)
-    for cat in df_orders["categorie_produit"]
+PRODUCT_CATEGORIES = [
+    "electronics",
+    "accessories",
+    "mechanical_parts",
+    "medical_supply",
+    "industrial_tools",
 ]
 
-# retards corrélés au fournisseur + saison (plus de retards en Nov/Dec)
-retards = []
-for s, d in zip(df_orders["fournisseur"], df_orders["date_commande"]):
-    lam = supplier_delay_lambda[s]
+INCIDENT_TYPES = [
+    "delivery_delay",
+    "quality_issue",
+    "damaged_goods",
+    "missing_items",
+    "documentation_problem",
+]
 
-    # saison: fin d'année = plus de charge logistique
-    if d.month in [11, 12]:
-        lam *= 1.25
-    elif d.month in [7, 8]:
-        lam *= 1.10
+SEVERITIES = ["low", "medium", "high", "critical"]
 
-    r = np.random.poisson(lam=lam)
+COUNTRIES = [
+    ("Germany", "DE"),
+    ("France", "FR"),
+    ("United States", "US"),
+    ("China", "CN"),
+    ("Sweden", "SE"),
+    ("Spain", "ES"),
+    ("Italy", "IT"),
+    ("Netherlands", "NL"),
+    ("Belgium", "BE"),
+]
 
-    # beaucoup de 0
-    if np.random.rand() < 0.55:
-        r = 0
+COUNTRY_CODE_VARIANTS = {
+    "DE": ["DE", "de", "Germany", "GER"],
+    "FR": ["FR", "fr", "France", "FRA"],
+    "US": ["US", "us", "United States", "USA"],
+    "CN": ["CN", "cn", "China", "CHN"],
+    "SE": ["SE", "se", "Sweden", "SWE"],
+    "ES": ["ES", "es", "Spain", "ESP"],
+    "IT": ["IT", "it", "Italy", "ITA"],
+    "NL": ["NL", "nl", "Netherlands", "NLD"],
+    "BE": ["BE", "be", "Belgium", "BEL"],
+}
 
-    # parfois en avance
-    if np.random.rand() < 0.08:
-        r = -np.random.randint(1, 4)
 
-    retards.append(r)
+# =========================================================
+# HELPERS
+# =========================================================
+def random_date(start: datetime, end: datetime) -> datetime:
+    delta = end - start
+    return start + timedelta(days=random.randint(0, delta.days))
 
-df_orders["delai_reel"] = (df_orders["delai_prevu"] + np.array(retards)).astype(int)
-df_orders["delai_reel"] = clip(df_orders["delai_reel"], 0, 60).astype(int)
 
-# PRIX: base par catégorie + inflation + choc + volatilité fournisseur
-base_price = {"alimentaire": 3.0, "non_alimentaire": 15.0, "logistique": 8.0}
+def random_datetime_str(dt: datetime, mode: str) -> str:
+    """FMT-01: formats de date multiples"""
+    if mode == "iso":
+        return dt.strftime("%Y-%m-%d")
+    if mode == "iso_no_zero":
+        return f"{dt.year}-{dt.month}-{dt.day}"
+    if mode == "slash":
+        return dt.strftime("%Y/%m/%d")
+    if mode == "dash_fr":
+        return dt.strftime("%d-%m-%Y")
+    if mode == "datetime":
+        return dt.strftime("%Y-%m-%dT%H:%M:%S")
+    return dt.strftime("%Y-%m-%d")
 
-days_from_start = (df_orders["date_commande"] - pd.to_datetime(START_DATE)).dt.days.values
-inflation = 1.0 + (days_from_start / max(1, days_from_start.max())) * 0.06  # +6%
 
-shock_start = pd.to_datetime(SHOCK_START)
-shock_end = pd.to_datetime(SHOCK_END)
+def maybe_multiformat_date(dt: datetime) -> str:
+    formats = ["iso", "iso_no_zero", "slash", "dash_fr", "datetime"]
+    return random_datetime_str(dt, random.choice(formats))
 
-prices = []
-for s, cat, dt, infl in zip(df_orders["fournisseur"], df_orders["categorie_produit"], df_orders["date_commande"], inflation):
-    mu = base_price[cat] * infl
 
-    # choc de marché sur une catégorie
-    if cat == SHOCK_CATEGORY and shock_start <= dt <= shock_end:
-        mu *= SHOCK_MULTIPLIER
+def random_phone(country_code: str) -> str:
+    if country_code == "DE":
+        return f"+49 30 {random.randint(100000, 999999)}"
+    if country_code == "FR":
+        return f"+33 1 {random.randint(10000000, 99999999)}"
+    if country_code == "US":
+        return f"+1 312 555 {random.randint(1000, 9999)}"
+    if country_code == "CN":
+        return f"+86 755 {random.randint(100000, 999999)}"
+    if country_code == "SE":
+        return f"+46 8 {random.randint(100000, 999999)}"
+    return fake.phone_number()
 
-    vol = supplier_price_vol[s]
 
-    # lognormal -> positif + volatilité
-    p = np.random.lognormal(mean=np.log(mu), sigma=vol)
+def bad_phone() -> str:
+    return random.choice([
+        "12345",
+        "++33ABCD",
+        "phone_unknown",
+        "06-XX-YY",
+        "not_a_phone",
+    ])
 
-    # fournisseurs “dominants” peuvent négocier légèrement mieux (prix un peu plus bas)
-    if s in heavy_suppliers:
-        p *= np.random.uniform(0.97, 0.995)
 
-    prices.append(p)
+def bad_email(name: str) -> str:
+    username = re.sub(r"[^a-z]", "", name.lower())
+    return random.choice([
+        f"{username}.mail.com",
+        f"{username}@mail",
+        f"{username}#company.com",
+        "unknown_email",
+        "n/a",
+    ])
 
-df_orders["prix"] = np.round(prices, 2)
 
-# Quantité: lognormal + catégorie influence
-q = np.random.lognormal(mean=2.2, sigma=0.65, size=N_ORDERS)
-q = q * np.where(df_orders["categorie_produit"].values == "logistique", 1.35, 1.0)
-df_orders["quantite"] = clip(q.astype(int), 1, 800)
+def maybe_case_noise(value: str) -> str:
+    """CAS-01"""
+    choices = [
+        value.lower(),
+        value.upper(),
+        value.title(),
+        value,
+    ]
+    return random.choice(choices)
 
-# =========================
-# 3) DATA QUALITY ISSUES
-# =========================
-for col in ["prix", "quantite", "delai_reel"]:
-    mask = np.random.rand(N_ORDERS) < MISSING_RATE
-    df_orders.loc[mask, col] = np.nan
 
-mask_out = np.random.rand(N_ORDERS) < OUTLIER_RATE
-df_orders.loc[mask_out, "prix"] = df_orders.loc[mask_out, "prix"] * np.random.choice([4, 6, 8], size=mask_out.sum())
+def maybe_space_noise(value: str) -> str:
+    """CAS-02 + CAS-03"""
+    r = random.random()
+    if r < 0.33:
+        return " " + value
+    if r < 0.66:
+        return value + " "
+    return value
 
-mask_out_q = np.random.rand(N_ORDERS) < OUTLIER_RATE
-df_orders.loc[mask_out_q, "quantite"] = df_orders.loc[mask_out_q, "quantite"] * np.random.choice([5, 10], size=mask_out_q.sum())
 
-n_dups = int(N_ORDERS * DUPLICATE_RATE)
-if n_dups > 0:
-    dup_rows = df_orders.sample(n=n_dups, random_state=SEED)
-    df_orders = pd.concat([df_orders, dup_rows], ignore_index=True)
+def make_partial_duplicate_supplier(row: dict) -> dict:
+    """ID-01 / doublon partiel logique côté suppliers"""
+    new_row = row.copy()
+    field_to_change = random.choice(
+        ["phone_number", "contact_email", "updated_at", "city"]
+    )
+    if field_to_change == "phone_number":
+        new_row["phone_number"] = bad_phone()
+    elif field_to_change == "contact_email":
+        new_row["contact_email"] = bad_email(new_row.get("contact_person", "contact"))
+    elif field_to_change == "updated_at":
+        new_row["updated_at"] = maybe_multiformat_date(random_date(START_DATE, END_DATE))
+    elif field_to_change == "city":
+        new_row["city"] = maybe_case_noise(new_row["city"])
+    return new_row
 
-df_orders["date_commande"] = pd.to_datetime(df_orders["date_commande"])
 
-# =========================
-# 4) INCIDENTS (corrélés aux retards)
-# =========================
-tmp = df_orders.dropna(subset=["delai_reel", "delai_prevu"]).copy()
-tmp["is_late"] = (tmp["delai_reel"] > tmp["delai_prevu"]).astype(int)
-late_ratio = tmp.groupby("fournisseur")["is_late"].mean().to_dict()
+# =========================================================
+# 1) SUPPLIERS.PARQUET
+# =========================================================
+suppliers = []
+valid_supplier_ids = list(range(1, N_SUPPLIERS + 1))
 
-orders_by_supplier = df_orders["fournisseur"].value_counts().to_dict()
+for supplier_id in valid_supplier_ids:
+    country, country_code = random.choice(COUNTRIES)
+    company_name = fake.company()
+    city = fake.city()
+    contact_person = fake.name()
 
-incident_rows = []
-for s in suppliers:
-    risk = supplier_risk[s]
-    n_orders_s = orders_by_supplier.get(s, 0)
-    lr = late_ratio.get(s, 0.0)
+    created_at = random_date(datetime(2025, 1, 1), datetime(2025, 12, 31))
+    updated_at = random_date(created_at, END_DATE)
 
-    base_rate = 0.0025 if risk == 0 else 0.009 if risk == 1 else 0.022
-    corr_boost = 1.0 + (lr * (2.2 if risk == 2 else 1.6 if risk == 1 else 1.2))
+    row = {
+        "supplier_id": supplier_id,
+        "supplier_name": company_name,
+        "city": maybe_case_noise(city),  # CAS-01
+        "country": country,
+        "country_code": random.choice(COUNTRY_CODE_VARIANTS[country_code]),  # SYN-02
+        "phone_number": random_phone(country_code),
+        "contact_person": contact_person,
+        "contact_email": fake.email(),
+        "created_at": maybe_multiformat_date(created_at),   # FMT-01
+        "updated_at": maybe_multiformat_date(updated_at),   # FMT-01
+        # SCH-03: colonnes séparées aussi présentes
+        "contact_name": contact_person.split(" ")[0] if " " in contact_person else contact_person,
+        "contact_surname": contact_person.split(" ")[-1] if " " in contact_person else None,
+    }
+    suppliers.append(row)
 
-    lam = max(0.2, n_orders_s * base_rate * corr_boost)
-    expected_incidents = int(np.random.poisson(lam=lam))
+# NUL-01 : NULL natif
+for idx in random.sample(range(len(suppliers)), k=6):
+    suppliers[idx]["contact_email"] = None
 
-    if expected_incidents == 0:
-        continue
+for idx in random.sample(range(len(suppliers)), k=5):
+    suppliers[idx]["contact_person"] = None
 
-    supplier_order_dates = df_orders.loc[df_orders["fournisseur"] == s, "date_commande"].dropna()
-    if len(supplier_order_dates) > 0:
-        base_dates = np.random.choice(supplier_order_dates.values, size=expected_incidents, replace=True)
-        inc_dates = pd.to_datetime(base_dates) + pd.to_timedelta(np.random.randint(0, 11, size=expected_incidents), unit="D")
-    else:
-        inc_dates = seasonal_sample_dates(expected_incidents, START_DATE, END_DATE)
+# "référent null ou pas un nom"
+for idx in random.sample(range(len(suppliers)), k=5):
+    suppliers[idx]["contact_person"] = random.choice([None, "12345", "???", "N/A"])
 
-    for d in inc_dates:
-        p_retard = clip(0.25 + 0.90 * lr, 0.30, 0.75)
-        remaining = 1.0 - p_retard
-        p_qualite = remaining * 0.65
-        p_log = remaining * 0.35
+# phone_number pas au bon format
+for idx in random.sample(range(len(suppliers)), k=8):
+    suppliers[idx]["phone_number"] = bad_phone()
 
-        t = np.random.choice(INCIDENT_TYPES, p=[p_retard, p_qualite, p_log])
+# contact_email pas au bon format
+for idx in random.sample(range(len(suppliers)), k=8):
+    suppliers[idx]["contact_email"] = bad_email(fake.first_name())
 
-        if risk == 0:
-            g = np.random.choice(SEVERITIES, p=[0.78, 0.20, 0.02])
-        elif risk == 1:
-            g = np.random.choice(SEVERITIES, p=[0.58, 0.32, 0.10])
-        else:
-            g = np.random.choice(SEVERITIES, p=[0.38, 0.40, 0.22])
+# ID-01 : doublons exacts
+exact_duplicate_suppliers = random.sample(suppliers, k=4)
+suppliers.extend([row.copy() for row in exact_duplicate_suppliers])
 
-        incident_rows.append({"type_incident": t, "gravite": g, "date": d, "fournisseur": s})
+# Doublons partiels
+partial_duplicate_suppliers = random.sample(suppliers[:N_SUPPLIERS], k=4)
+suppliers.extend([make_partial_duplicate_supplier(row) for row in partial_duplicate_suppliers])
 
-df_incidents = pd.DataFrame(incident_rows)
+df_suppliers = pd.DataFrame(suppliers)
 
-if len(df_incidents) > 0:
-    mask = np.random.rand(len(df_incidents)) < 0.01
-    df_incidents.loc[mask, "date"] = pd.NaT
+# =========================================================
+# 2) ORDERS.JSON
+# =========================================================
+orders = []
 
-# =========================
-# 5) EXPORT
-# =========================
-df_orders = df_orders.sort_values("date_commande").reset_index(drop=True)
-df_incidents["date"] = pd.to_datetime(df_incidents["date"])
-df_incidents = df_incidents.sort_values("date").reset_index(drop=True)
+for i in range(N_ORDERS):
+    order_id = 1000 + i
+    supplier_id = random.choice(valid_supplier_ids)
 
-df_orders.to_csv("commandes_fournisseurs.csv", index=False)
-df_incidents.to_csv("incidents_fournisseurs.csv", index=False)
+    order_date = random_date(datetime(2026, 1, 1), datetime(2026, 3, 7))
+    expected_date = order_date + timedelta(days=random.randint(1, 10))
+    actual_date = expected_date + timedelta(days=random.randint(-2, 5))
 
-print("✅ Fichiers générés :")
-print(" - commandes_fournisseurs.csv :", df_orders.shape)
-print(" - incidents_fournisseurs.csv :", df_incidents.shape)
+    items = []
+    for _ in range(random.randint(1, 3)):
+        quantity = random.randint(1, 120)
+        unit_price = round(random.uniform(5, 1500), 2)
+        items.append({
+            "product_category": random.choice(PRODUCT_CATEGORIES),
+            "quantity": quantity,
+            "unit_price": unit_price,
+        })
 
-print("\nInfos quick-check :")
-print(" - Nb fournisseurs heavy (dépendance):", len(heavy_suppliers))
-print(" - Exemples heavy:", sorted(list(heavy_suppliers))[:5])
+    row = {
+        "order_id": order_id,
+        "supplier_id": supplier_id,
+        "order_date": maybe_multiformat_date(order_date),                 # FMT-01
+        "delivery_date_expected": maybe_multiformat_date(expected_date),  # FMT-01
+        "delivery_date_actual": maybe_multiformat_date(actual_date),      # FMT-01
+        "items": items,
+    }
+    orders.append(row)
 
-print("\nAperçu commandes:")
-print(df_orders.head(5))
+# ID-01 : doublons exacts
+exact_duplicate_orders = random.sample(orders, k=10)
+orders.extend([json.loads(json.dumps(row)) for row in exact_duplicate_orders])
 
-print("\nAperçu incidents:")
-print(df_incidents.head(5))
+# ID-03 : identifiant manquant
+for idx in random.sample(range(len(orders)), k=10):
+    orders[idx]["order_id"] = random.choice([None, "", " "])
 
-print("\n--- Data quality quick checks ---")
-print("Orders - null rates:\n", df_orders[["prix","quantite","delai_reel"]].isna().mean())
-print("Orders - approx duplicates:", df_orders.duplicated().mean())
-print("Incidents - null rate date:", df_incidents["date"].isna().mean())
+# NUL-01 : NULL natif
+for idx in random.sample(range(len(orders)), k=12):
+    orders[idx]["delivery_date_actual"] = None
+
+# NUL-05 : champ items absent du schéma
+for idx in random.sample(range(len(orders)), k=10):
+    if "items" in orders[idx]:
+        del orders[idx]["items"]
+
+# FMT-06 : entier stocké comme float / type incohérent
+for idx in random.sample(range(len(orders)), k=15):
+    if isinstance(orders[idx].get("supplier_id"), int):
+        orders[idx]["supplier_id"] = float(orders[idx]["supplier_id"])
+
+for idx in random.sample(range(len(orders)), k=15):
+    if isinstance(orders[idx].get("order_id"), int):
+        orders[idx]["order_id"] = float(orders[idx]["order_id"])
+
+for order in random.sample(orders, k=30):
+    if "items" in order and isinstance(order["items"], list):
+        for item in order["items"]:
+            if "quantity" in item and random.random() < 0.5:
+                item["quantity"] = float(item["quantity"])  # FMT-06
+
+# LOG-01 : incohérence date logique (delivery_date_actual < order_date)
+for idx in random.sample(range(len(orders)), k=8):
+    base = random_date(datetime(2026, 2, 1), datetime(2026, 3, 1))
+    orders[idx]["order_date"] = maybe_multiformat_date(base)
+    orders[idx]["delivery_date_actual"] = maybe_multiformat_date(base - timedelta(days=random.randint(1, 5)))
+
+# LOG-03 : supplier_id orphelin (référence inexistante)
+for idx in random.sample(range(len(orders)), k=12):
+    orders[idx]["supplier_id"] = random.choice([9999, 8888, 7777])
+
+# =========================================================
+# 3) INCIDENTS.CSV
+# =========================================================
+incidents = []
+
+# On essaie de lier une partie des incidents à des commandes
+valid_order_ids_for_incidents = [
+    o["order_id"] for o in orders
+    if o.get("order_id") not in [None, "", " "] and isinstance(o.get("order_id"), (int, float))
+]
+
+for i in range(N_INCIDENTS):
+    incident_date = random_date(datetime(2026, 1, 1), END_DATE)
+    supplier_id = random.choice(valid_supplier_ids)
+
+    row = {
+        "incident_type": random.choice(INCIDENT_TYPES),
+        "severity": random.choice(SEVERITIES),
+        "incident_date": maybe_multiformat_date(incident_date),  # FMT-01
+        "supplier_id": supplier_id,
+        "order_id": random.choice(valid_order_ids_for_incidents) if valid_order_ids_for_incidents else None,
+        "description": fake.sentence(nb_words=8),
+    }
+    incidents.append(row)
+
+# CAS-02 + CAS-03 : espaces autour de incident_type
+for idx in random.sample(range(len(incidents)), k=25):
+    incidents[idx]["incident_type"] = maybe_space_noise(incidents[idx]["incident_type"])
+
+df_incidents = pd.DataFrame(incidents)
+
+# =========================================================
+# EXPORT
+# =========================================================
+
+# orders.json
+with open(OUTPUT_ORDERS_JSON, "w", encoding="utf-8") as f:
+    json.dump(orders, f, ensure_ascii=False, indent=2)
+
+# suppliers.parquet
+# nécessite pyarrow ou fastparquet
+df_suppliers.to_parquet(OUTPUT_SUPPLIERS_PARQUET, index=False)
+
+# incidents.csv
+df_incidents.to_csv(OUTPUT_INCIDENTS_CSV, index=False)
+
+# =========================================================
+# QUICK CHECK
+# =========================================================
+print("✅ Files generated:")
+print(f" - {OUTPUT_ORDERS_JSON}: {len(orders)} records")
+print(f" - {OUTPUT_SUPPLIERS_PARQUET}: {df_suppliers.shape}")
+print(f" - {OUTPUT_INCIDENTS_CSV}: {df_incidents.shape}")
+
+print("\nSample orders:")
+print(json.dumps(orders[:2], ensure_ascii=False, indent=2))
+
+print("\nSample suppliers:")
+print(df_suppliers.head(5).to_string(index=False))
+
+print("\nSample incidents:")
+print(df_incidents.head(5).to_string(index=False))
