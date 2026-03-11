@@ -58,6 +58,18 @@ COUNTRIES = [
     ("Belgium", "BE"),
 ]
 
+COUNTRY_CITY_MAP = {
+    "Germany": ["Berlin", "Hamburg", "Munich", "Cologne", "Frankfurt"],
+    "France": ["Paris", "Lyon", "Marseille", "Toulouse", "Lille"],
+    "United States": ["Chicago", "New York", "Los Angeles", "Dallas", "Seattle"],
+    "China": ["Shenzhen", "Shanghai", "Beijing", "Guangzhou", "Hangzhou"],
+    "Sweden": ["Stockholm", "Gothenburg", "Malmö", "Uppsala", "Västerås"],
+    "Spain": ["Madrid", "Barcelona", "Valencia", "Seville", "Bilbao"],
+    "Italy": ["Rome", "Milan", "Turin", "Naples", "Bologna"],
+    "Netherlands": ["Amsterdam", "Rotterdam", "Utrecht", "Eindhoven", "The Hague"],
+    "Belgium": ["Brussels", "Antwerp", "Ghent", "Liège", "Bruges"],
+}
+
 COUNTRY_CODE_VARIANTS = {
     "DE": ["DE", "de", "Germany", "GER"],
     "FR": ["FR", "fr", "France", "FRA"],
@@ -164,7 +176,8 @@ def make_partial_duplicate_supplier(row: dict) -> dict:
     if field_to_change == "phone_number":
         new_row["phone_number"] = bad_phone()
     elif field_to_change == "contact_email":
-        new_row["contact_email"] = bad_email(new_row.get("contact_person", "contact"))
+        name_for_email = new_row.get("contact_name", "contact")
+        new_row["contact_email"] = bad_email(name_for_email)
     elif field_to_change == "updated_at":
         new_row["updated_at"] = maybe_multiformat_date(random_date(START_DATE, END_DATE))
     elif field_to_change == "city":
@@ -207,7 +220,7 @@ valid_supplier_ids = list(range(1, N_SUPPLIERS + 1))
 for supplier_id in valid_supplier_ids:
     country, country_code = random.choice(COUNTRIES)
     company_name = fake.company()
-    city = fake.city()
+    city = random.choice(COUNTRY_CITY_MAP.get(country, ["Unknown"]))
     contact_person = fake.name()
 
     created_at = random_date(datetime(2025, 1, 1), datetime(2025, 12, 31))
@@ -220,7 +233,6 @@ for supplier_id in valid_supplier_ids:
         "country": country,
         "country_code": random.choice(COUNTRY_CODE_VARIANTS[country_code]),  # SYN-02
         "phone_number": random_phone(country_code),
-        "contact_person": contact_person,
         "contact_email": fake.email(),
         "created_at": maybe_multiformat_date(created_at),   # FMT-01
         "updated_at": maybe_multiformat_date(updated_at),   # FMT-01
@@ -235,11 +247,12 @@ for idx in random.sample(range(len(suppliers)), k=6):
     suppliers[idx]["contact_email"] = None
 
 for idx in random.sample(range(len(suppliers)), k=5):
-    suppliers[idx]["contact_person"] = None
+    suppliers[idx]["contact_name"] = None
+    suppliers[idx]["contact_surname"] = None
 
 # "référent null ou pas un nom"
 for idx in random.sample(range(len(suppliers)), k=5):
-    suppliers[idx]["contact_person"] = random.choice([None, "12345", "???", "N/A"])
+    suppliers[idx]["contact_name"] = random.choice([None, "12345", "???", "N/A"])
 
 # phone_number pas au bon format
 for idx in random.sample(range(len(suppliers)), k=8):
