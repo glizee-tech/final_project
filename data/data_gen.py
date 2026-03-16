@@ -212,6 +212,36 @@ def parse_mixed_date(date_value):
     return None
 
 # =========================================================
+# PRODUCT CATALOG (cohérence category -> product_id)
+# =========================================================
+
+PRODUCTS_PER_CATEGORY = 8
+
+product_catalog = {}
+product_lookup = {}
+
+product_id_counter = 1
+
+for category in PRODUCT_CATEGORIES:
+    product_catalog[category] = []
+
+    for i in range(PRODUCTS_PER_CATEGORY):
+        product_id = product_id_counter
+
+        product = {
+            "product_id": product_id,
+            "product_name": f"{category}_product_{i+1}",
+            "product_category": category,
+        }
+
+        product_catalog[category].append(product)
+        product_lookup[product_id] = product
+
+        product_id_counter += 1
+
+
+
+# =========================================================
 # 1) SUPPLIERS.PARQUET
 # =========================================================
 suppliers = []
@@ -276,6 +306,7 @@ df_suppliers = pd.DataFrame(suppliers)
 # 2) ORDERS.JSON
 # =========================================================
 orders = []
+item_id_counter = 1
 
 for i in range(N_ORDERS):
     order_id = 1000 + i
@@ -287,14 +318,25 @@ for i in range(N_ORDERS):
 
     items = []
     for _ in range(random.randint(1, 3)):
+
+        category = random.choice(PRODUCT_CATEGORIES)
+
+        # choisir un produit cohérent avec la catégorie
+        product = random.choice(product_catalog[category])
+
         quantity = random.randint(1, 120)
         unit_price = round(random.uniform(5, 1500), 2)
+
         items.append({
-            "product_category": random.choice(PRODUCT_CATEGORIES),
+            "item_id": item_id_counter,
+            "product_id": product["product_id"],
+            "product_category": product["product_category"],
             "quantity": quantity,
             "unit_price": unit_price,
         })
 
+        item_id_counter += 1
+        
     row = {
         "order_id": order_id,
         "supplier_id": supplier_id,
