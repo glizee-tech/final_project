@@ -359,7 +359,6 @@ late_orders = []
 
 for order in orders:
     order_id = order.get("order_id")
-    supplier_id = order.get("supplier_id")
 
     order_date = parse_mixed_date(order.get("order_date"))
     expected_date = parse_mixed_date(order.get("delivery_date_expected"))
@@ -368,7 +367,6 @@ for order in orders:
     # On garde seulement les commandes exploitables
     if (
         order_id not in [None, "", " "]
-        and supplier_id is not None
         and order_date is not None
         and expected_date is not None
         and actual_date is not None
@@ -376,7 +374,6 @@ for order in orders:
     ):
         late_orders.append({
             "order_id": order_id,
-            "supplier_id": supplier_id,
             "order_date": order_date,
             "delivery_date_expected": expected_date,
             "delivery_date_actual": actual_date,
@@ -422,7 +419,6 @@ for late_order in late_orders:
             "incident_type": "delivery_delay",
             "severity": severity,
             "incident_date": maybe_multiformat_date(incident_date),  # FMT-01
-            "supplier_id": late_order["supplier_id"],
             "order_id": late_order["order_id"],
             "description": f"Delivery delay detected: {delay_days} day(s) late."
         })
@@ -439,12 +435,10 @@ other_incident_types = [
 valid_orders_for_other_incidents = []
 for o in orders:
     order_id = o.get("order_id")
-    supplier_id = o.get("supplier_id")
 
-    if order_id not in [None, "", " "] and supplier_id is not None:
+    if order_id not in [None, "", " "]:
         valid_orders_for_other_incidents.append({
-            "order_id": order_id,
-            "supplier_id": supplier_id
+            "order_id": order_id
         })
 
 # Nombre d'autres incidents à ajouter
@@ -457,13 +451,6 @@ for _ in range(N_OTHER_INCIDENTS):
 
     linked_order = random.choice(valid_orders_for_other_incidents) if valid_orders_for_other_incidents else None
 
-    if linked_order:
-        supplier_id = linked_order["supplier_id"]
-        order_id = linked_order["order_id"]
-    else:
-        supplier_id = random.choice(valid_supplier_ids)
-        order_id = None
-
     severity = random.choices(
         ["low", "medium", "high", "critical"],
         weights=[0.5, 0.3, 0.15, 0.05]
@@ -473,7 +460,6 @@ for _ in range(N_OTHER_INCIDENTS):
         "incident_type": random.choice(other_incident_types),
         "severity": severity,
         "incident_date": maybe_multiformat_date(incident_date),
-        "supplier_id": supplier_id,
         "order_id": order_id,
         "description": fake.sentence(nb_words=8),
     })
