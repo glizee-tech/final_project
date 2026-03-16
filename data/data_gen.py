@@ -393,6 +393,7 @@ for idx in random.sample(range(len(orders)), k=12):
 # 3) INCIDENTS.CSV
 # =========================================================
 incidents = []
+incident_id = 1
 
 # ---------------------------------------------------------
 # A. Identifier les commandes réellement en retard
@@ -401,7 +402,6 @@ late_orders = []
 
 for order in orders:
     order_id = order.get("order_id")
-
     order_date = parse_mixed_date(order.get("order_date"))
     expected_date = parse_mixed_date(order.get("delivery_date_expected"))
     actual_date = parse_mixed_date(order.get("delivery_date_actual"))
@@ -458,12 +458,14 @@ for late_order in late_orders:
             )[0]
 
         incidents.append({
+            "incident_id": incident_id,
             "incident_type": "delivery_delay",
             "severity": severity,
             "incident_date": maybe_multiformat_date(incident_date),  # FMT-01
             "order_id": late_order["order_id"],
             "description": f"Delivery delay detected: {delay_days} day(s) late."
         })
+        incident_id += 1
 # ---------------------------------------------------------
 # C. Générer les autres incidents EN PLUS des delivery_delay
 # ---------------------------------------------------------
@@ -499,12 +501,14 @@ for _ in range(N_OTHER_INCIDENTS):
     )[0]
 
     incidents.append({
+        "incident_id": incident_id,
         "incident_type": random.choice(other_incident_types),
         "severity": severity,
         "incident_date": maybe_multiformat_date(incident_date),
         "order_id": order_id,
         "description": fake.sentence(nb_words=8),
     })
+    incident_id += 1
 
 # ---------------------------------------------------------
 # D. Injecter les pièges restants sur incidents.csv
