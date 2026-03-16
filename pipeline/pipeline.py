@@ -7,6 +7,7 @@ resources:
           notebook_task:
             notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/landing
             source: WORKSPACE
+          environment_key: Default
         - task_key: Bronze
           depends_on:
             - task_key: Landing
@@ -44,5 +45,9 @@ resources:
       environments:
         - environment_key: Default
           spec:
+            dependencies:
+              - phonenumbers==9.0.26
+              - pycountry==26.2.16
+              - rapidfuzz==3.14.3
             environment_version: "4"
       performance_target: PERFORMANCE_OPTIMIZED
