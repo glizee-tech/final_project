@@ -547,3 +547,10 @@ def build_freq_corrector(spark_df, col_name, min_count=2, threshold=85):
         return match[0] if match and match[1] > threshold else value
 
     return F.udf(corrector, StringType())
+
+
+def cast_all_columns_to_string(df):
+    """
+    Cast all columns of a DataFrame to string.
+    """
+    return df.select([F.col(c).cast("string").alias(c) for c in df.columns])
