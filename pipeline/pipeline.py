@@ -1,7 +1,7 @@
 resources:
   jobs:
-    New_Job_Mar_16_2026_02_10_PM:
-      name: New Job Mar 16, 2026, 02:10 PM
+    my_pipeline:
+      name: my-pipeline
       tasks:
         - task_key: Landing
           notebook_task:
