@@ -8,6 +8,4 @@ zope.interface==8.2
 google-cloud-storage==3.9.0
 faker
 pyarrow
-phonenumbers
-pycountry
-rapidfuzz
+
