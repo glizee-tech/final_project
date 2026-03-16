@@ -1,49 +1,44 @@
 resources:
   jobs:
-    Pipeline:
-      name: Pipeline
+    New_Job_Mar_16_2026_02_10_PM:
+      name: New Job Mar 16, 2026, 02:10 PM
       tasks:
-        - task_key: Setup
-          notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/setup
-            source: WORKSPACE
         - task_key: Landing
-          depends_on:
-            - task_key: Setup
           notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/landing
+            notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/landing
             source: WORKSPACE
-          environment_key: Default
         - task_key: Bronze
           depends_on:
             - task_key: Landing
           notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/bronze
+            notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/bronze
             source: WORKSPACE
+          environment_key: Default
         - task_key: Silver_suppliers
           depends_on:
             - task_key: Bronze
           notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/silver_suppliers
+            notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/silver_suppliers
             source: WORKSPACE
-        - task_key: silver_orders
+          environment_key: Default
+        - task_key: Silver_orders
           depends_on:
             - task_key: Silver_suppliers
           notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/silver_incidents
+            notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/silver_orders
             source: WORKSPACE
-        - task_key: silver_incidents
+          environment_key: Default
+        - task_key: Silver_incidents
           depends_on:
-            - task_key: silver_orders
+            - task_key: Silver_orders
           notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/gold
+            notebook_path: /Repos/herbelleau@gmail.com/final_project/notebook/silver_incidents
             source: WORKSPACE
-        - task_key: gold
-          depends_on:
-            - task_key: silver_incidents
-          notebook_task:
-            notebook_path: /Workspace/Users/ghislainlizee@gmail.com/final_project/notebook/gold
-            source: WORKSPACE
+          environment_key: Default
+      git_source:
+        git_url: https://github.com/glizee-tech/final_project.git
+        git_provider: gitHub
+        git_branch: master
       queue:
         enabled: true
       environments:
