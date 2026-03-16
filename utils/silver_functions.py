@@ -315,7 +315,7 @@ def validate_date_order(df, date_late_col, date_early_col, primary_key):
 # VALIDATION DES CLÉS ÉTRANGÈRES
 # ==============================================
 
-def validate_foreign_key(df_main, df_reference, fk_col, pk_col, primary_key_main):
+def validate_foreign_key(df_main, df_reference, fk_col, pk_col):
     """
     Vérifie qu'une clé étrangère d'une table principale existe bien
     dans la table de référence.
@@ -329,8 +329,6 @@ def validate_foreign_key(df_main, df_reference, fk_col, pk_col, primary_key_main
             Nom de la clé étrangère dans df_main
         pk_col : str
             Nom de la clé primaire dans df_reference
-        primary_key_main : str
-            Clé primaire unique de df_main
 
     Retour :
         df_valid : lignes avec clé étrangère valide
@@ -346,8 +344,8 @@ def validate_foreign_key(df_main, df_reference, fk_col, pk_col, primary_key_main
 
     # Lignes invalides
     df_quarantine = df_main.join(
-        df_valid.select(primary_key_main),
-        on=primary_key_main,
+        df_reference.select(pk_col).distinct().withColumnRenamed(pk_col, fk_col),
+        on=fk_col,
         how="left_anti"
     ).withColumn(
         "quarantine_reason",
