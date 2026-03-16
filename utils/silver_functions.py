@@ -8,6 +8,57 @@ import phonenumbers
 import pycountry
 from rapidfuzz import process
 
+# ==============================================
+# CONTROLE DES ID UNIQUE
+# ==============================================
+
+def check_duplicate_id(df, col_name):
+    """
+    Vérifie qu'une colonne ID ne contient pas de doublons.
+
+    Comportements :
+        Toutes les lignes contenant un ID dupliqué sont envoyées
+        en quarantaine (aucune n'est conservée).
+
+    Paramètres :
+        df : DataFrame Spark
+        col_name : str
+            Nom de la colonne ID à vérifier
+
+    Retour :
+        df_valid, df_quarantine
+    """
+    window_id = Window.partitionBy(col_name)
+
+    df_with_count = df.withColumn(
+        "__duplicate_count__",
+        F.count(col_name).over(window_id)
+    )
+
+    # lignes valides (id unique)
+    df_valid = (
+        df_with_count
+        .filter(F.col("__duplicate_count__") == 1)
+        .drop("__duplicate_count__")
+    )
+
+    # lignes en quarantaine (tous les doublons)
+    df_quarantine = (
+        df_with_count
+        .filter(F.col("__duplicate_count__") > 1)
+        .drop("__duplicate_count__")
+        .withColumn(
+            "quarantine_reason",
+            F.lit(f"duplicate_{col_name}")
+        )
+        .withColumn(
+            "quarantine_timestamp",
+            F.current_timestamp()
+        )
+    )
+
+    return df_valid, df_quarantine
+
 
 # ==============================================
 # NETTOYAGE DES COLONNES NUMÉRIQUES
