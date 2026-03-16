@@ -106,7 +106,7 @@ def clean_integer_column(df, col_name, to_delete=False, accept_float=False):
 # PARSING DES DATES
 # ==============================================
 
-def parse_date_col(col_name):
+def normalize_date(col_name):
     """
     Parse une colonne Spark contenant des dates stockées en chaîne de caractères
     selon plusieurs formats possibles.
