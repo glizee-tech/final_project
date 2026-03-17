@@ -39,7 +39,7 @@ jobs:
       - name: Build & Push (latest)
         run: |
           IMAGE_URI=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest
-          docker build -t $IMAGE_URI .
+          docker build -t $IMAGE_URI -f ./FastAPI/Dockerfile ./FastAPI
           docker push $IMAGE_URI
 
       - name: Get GKE credentials
