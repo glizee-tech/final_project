@@ -312,7 +312,7 @@ for i in range(N_ORDERS):
     order_id = 1000 + i
     supplier_id = random.choice(valid_supplier_ids)
 
-    order_date = random_date(datetime(2026, 1, 1), datetime(2026, 3, 7))
+    order_date = random_date(START_DATE,END_DATE - timedelta(days=30))  # éviter les commandes trop récentes sans délai possible
     expected_date = order_date + timedelta(days=random.randint(1, 10))
     actual_date = expected_date + timedelta(days=random.randint(-2, 5))
 
@@ -491,7 +491,7 @@ for o in orders:
 N_OTHER_INCIDENTS = max(50, int(len(late_orders) * 0.8))
 
 for _ in range(N_OTHER_INCIDENTS):
-    incident_date = random_date(datetime(2026, 1, 1), END_DATE)
+    incident_date = random_date(START_DATE, END_DATE)
 
     linked_order = random.choice(valid_orders_for_other_incidents) if valid_orders_for_other_incidents else None
 
