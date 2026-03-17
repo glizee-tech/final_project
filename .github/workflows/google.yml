@@ -1,0 +1,59 @@
+name: Deploy FastAPI (latest)
+
+on:
+  push:
+    branches:
+      - master
+
+env:
+  PROJECT_ID: sincere-nirvana-458912-s1
+  GAR_LOCATION: europe-west1
+  REPOSITORY: fastapi-poei
+  IMAGE: fastapi-poei
+  GKE_CLUSTER: fastapi-deployment-cluster
+  GKE_ZONE: europe-west1-d
+
+jobs:
+  deploy:
+    runs-on: ubuntu-latest
+
+    permissions:
+      contents: read
+      id-token: write
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+      - name: Auth GCP
+        uses: google-github-actions/auth@v2
+        with:
+          workload_identity_provider: projects/510447961793/locations/global/workloadIdentityPools/github-pool/providers/github-provider
+          service_account: github-actions@sincere-nirvana-458912-s1.iam.gserviceaccount.com
+
+      - name: Setup gcloud
+        uses: google-github-actions/setup-gcloud@v2
+
+      - name: Configure Docker
+        run: gcloud auth configure-docker $GAR_LOCATION-docker.pkg.dev
+
+      - name: Build & Push (latest)
+        run: |
+          IMAGE_URI=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest
+          docker build -t $IMAGE_URI .
+          docker push $IMAGE_URI
+
+      - name: Get GKE credentials
+        uses: google-github-actions/get-gke-credentials@v2
+        with:
+          cluster_name: ${{ env.GKE_CLUSTER }}
+          location: ${{ env.GKE_ZONE }}
+
+      - name: Restart deployment
+        run: |
+          kubectl rollout restart deployment fastapi-deployment
+          kubectl rollout status deployment fastapi-deployment
+
+          kubectl set image deployment/fastapi-deployment \
+          fastapi-poei-sha256-1=$IMAGE_URI
+
+          kubectl rollout status deployment/fastapi-deployment
