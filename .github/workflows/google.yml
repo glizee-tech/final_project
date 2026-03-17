@@ -38,6 +38,7 @@ jobs:
 
       - name: Build & Push (latest)
         run: |
+          cd .\FastAPI\
           IMAGE_URI=$GAR_LOCATION-docker.pkg.dev/$PROJECT_ID/$REPOSITORY/$IMAGE:latest
           docker build -t $IMAGE_URI .
           docker push $IMAGE_URI
