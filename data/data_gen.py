@@ -505,7 +505,7 @@ for _ in range(N_OTHER_INCIDENTS):
         "incident_type": random.choice(other_incident_types),
         "severity": severity,
         "incident_date": maybe_multiformat_date(incident_date),
-        "order_id": order_id,
+        "order_id": linked_order["order_id"] if linked_order else None,
         "description": fake.sentence(nb_words=8),
     })
     incident_id += 1
