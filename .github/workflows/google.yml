@@ -51,9 +51,3 @@ jobs:
       - name: Restart deployment
         run: |
           kubectl rollout restart deployment fastapi-deployment
-          kubectl rollout status deployment fastapi-deployment
-
-          kubectl set image deployment/fastapi-deployment \
-          fastapi-poei-sha256-1=$IMAGE_URI
-
-          kubectl rollout status deployment/fastapi-deployment
