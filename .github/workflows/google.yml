@@ -11,7 +11,7 @@ env:
   REPOSITORY: fastapi-poei
   IMAGE: fastapi-poei
   GKE_CLUSTER: fastapi-deployment-cluster
-  GKE_ZONE: europe-west1-d
+  GKE_ZONE: europe-west1
 
 jobs:
   deploy:
