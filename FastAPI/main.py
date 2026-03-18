@@ -17,7 +17,7 @@ def get_connection():
 
 @app.get("/")
 def read_root():
-    return {"message": "Il est 16h45"}
+    return {"message": "Il est 17h09"}
 
 
 @app.get("/suppliers")

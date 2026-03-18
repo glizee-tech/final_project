@@ -1,0 +1,95 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  annotations:
+    autopilot.gke.io/resource-adjustment: '{"input":{"containers":[{"name":"fastapi-poei-sha256-1"}]},"output":{"containers":[{"limits":{"ephemeral-storage":"1Gi"},"requests":{"cpu":"500m","ephemeral-storage":"1Gi","memory":"2Gi"},"name":"fastapi-poei-sha256-1"}]},"computeClassAtAdmission":"Default","modified":true}'
+    autopilot.gke.io/warden-version: 34.45.0-gke.3
+    deployment.kubernetes.io/revision: '16'
+  creationTimestamp: '2026-03-17T13:00:41Z'
+  generation: 20
+  labels:
+    app: fastapi-deployment
+    app.kubernetes.io/managed-by: cloud-console
+  name: fastapi-deployment
+  namespace: default
+  resourceVersion: '1773849176688655024'
+  uid: 30fcae5e-1577-4680-a3c9-b4dcfcd77004
+spec:
+  progressDeadlineSeconds: 600
+  replicas: 1
+  revisionHistoryLimit: 10
+  selector:
+    matchLabels:
+      app: fastapi-deployment
+      app.kubernetes.io/managed-by: cloud-console
+  strategy:
+    rollingUpdate:
+      maxSurge: 25%
+      maxUnavailable: 25%
+    type: RollingUpdate
+  template:
+    metadata:
+      annotations:
+        kubectl.kubernetes.io/restartedAt: '2026-03-18T15:52:52Z'
+      labels:
+        app: fastapi-deployment
+        app.kubernetes.io/managed-by: cloud-console
+    spec:
+      containers:
+      - env:
+        - name: DATABRICKS_HOST
+          value: dbc-a23f0ee1-f8e1.cloud.databricks.com
+        - name: DATABRICKS_HTTP_PATH
+          value: /sql/1.0/warehouses/46e0e7cbd8226640
+        - name: DATABRICKS_TOKEN
+          valueFrom:
+            secretKeyRef:
+              key: token
+              name: databricks-secret
+        image: europe-west1-docker.pkg.dev/sincere-nirvana-458912-s1/fastapi-poei/fastapi-poei:latest
+        imagePullPolicy: Always
+        name: fastapi-poei-sha256-1
+        resources:
+          limits:
+            ephemeral-storage: 1Gi
+          requests:
+            cpu: 500m
+            ephemeral-storage: 1Gi
+            memory: 2Gi
+        securityContext:
+          capabilities:
+            drop:
+            - NET_RAW
+        terminationMessagePath: /dev/termination-log
+        terminationMessagePolicy: File
+      dnsPolicy: ClusterFirst
+      restartPolicy: Always
+      schedulerName: default-scheduler
+      securityContext:
+        seccompProfile:
+          type: RuntimeDefault
+      terminationGracePeriodSeconds: 30
+      tolerations:
+      - effect: NoSchedule
+        key: kubernetes.io/arch
+        operator: Equal
+        value: amd64
+status:
+  availableReplicas: 1
+  conditions:
+  - lastTransitionTime: '2026-03-18T15:52:56Z'
+    lastUpdateTime: '2026-03-18T15:52:56Z'
+    message: Deployment has minimum availability.
+    reason: MinimumReplicasAvailable
+    status: 'True'
+    type: Available
+  - lastTransitionTime: '2026-03-18T10:03:18Z'
+    lastUpdateTime: '2026-03-18T15:52:56Z'
+    message: ReplicaSet "fastapi-deployment-9fd48644f" has successfully progressed.
+    reason: NewReplicaSetAvailable
+    status: 'True'
+    type: Progressing
+  observedGeneration: 20
+  readyReplicas: 1
+  replicas: 1
+  updatedReplicas: 1
