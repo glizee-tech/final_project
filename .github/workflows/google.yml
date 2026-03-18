@@ -4,6 +4,8 @@ on:
   push:
     branches:
       - master
+    paths:
+      - 'FastAPI/**'
 
 env:
   PROJECT_ID: sincere-nirvana-458912-s1
