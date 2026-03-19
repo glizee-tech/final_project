@@ -317,9 +317,10 @@ for i in range(N_ORDERS):
     actual_date = expected_date + timedelta(days=random.randint(-2, 5))
 
     items = []
+    order_category = random.choice(PRODUCT_CATEGORIES)
     for _ in range(random.randint(1, 3)):
 
-        category = random.choice(PRODUCT_CATEGORIES)
+        category = order_category  # ← plus de random ici
 
         # choisir un produit cohérent avec la catégorie
         product = random.choice(product_catalog[category])
