@@ -17,7 +17,7 @@ def get_connection():
 
 @app.get("/")
 def read_root():
-    return {"message": "It works"}
+    return {"message": "Great news, it works"}
 
 
 @app.get("/supplier_scores")
