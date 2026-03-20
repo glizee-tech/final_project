@@ -20,7 +20,7 @@ def read_root():
     return {"message": "It works"}
 
 
-@app.get("/supplier_scores_yearly")
+@app.get("/supplier_scores")
 def get_supplier_scores_yearly(
     year: int = Query(default=None),
     supplier_id: int = Query(default=None)
