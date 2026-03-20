@@ -21,7 +21,7 @@ def read_root():
 
 
 @app.get("/supplier_scores")
-def get_supplier_scores_yearly(
+def get_supplier_scores(
     year: int = Query(default=None),
     supplier_id: int = Query(default=None)
 ):
@@ -36,11 +36,11 @@ def get_supplier_scores_yearly(
 
         # Ajout des filtres dynamiques
         if year is not None:
-            filters.append("year = %s")
+            filters.append(f"year = {year}")
             params.append(year)
 
         if supplier_id is not None:
-            filters.append("supplier_id = %s")
+            filters.append(f"supplier_id = {supplier_id}")
             params.append(supplier_id)
 
         # Construire la requête finale
