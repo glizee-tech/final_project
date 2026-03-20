@@ -1,4 +1,4 @@
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Query
 from databricks import sql
 import os
 
@@ -17,16 +17,41 @@ def get_connection():
 
 @app.get("/")
 def read_root():
-    return {"message": "Il est 17h09"}
+    return {"message": "It works"}
 
 
-@app.get("/suppliers")
-def get_suppliers():
+@app.get("/supplier_scores_yearly")
+def get_supplier_scores_yearly(
+    year: int = Query(default=None),
+    supplier_id: int = Query(default=None)
+):
     try:
         conn = get_connection()
         cursor = conn.cursor()
 
-        cursor.execute("SELECT * FROM workspace.final_project.gold_dim_suppliers LIMIT 1000")
+        # Base query
+        query = "SELECT * FROM workspace.final_project.gold_supplier_scores_yearly"
+        filters = []
+        params = []
+
+        # Ajout des filtres dynamiques
+        if year is not None:
+            filters.append("year = %s")
+            params.append(year)
+
+        if supplier_id is not None:
+            filters.append("supplier_id = %s")
+            params.append(supplier_id)
+
+        # Construire la requête finale
+        if filters:
+            query += " WHERE " + " AND ".join(filters)
+
+        query += " LIMIT 1000"
+
+        # Exécution
+        cursor.execute(query, params)
+
         columns = [desc[0] for desc in cursor.description]
         rows = cursor.fetchall()
 
